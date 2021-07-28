@@ -1,0 +1,56 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+RWTexture2D<float4> Result;
+
+float F(float c)
+{
+    float f = 1 - c;
+    return f * f * f * f * f;
+}
+
+float D(float r, float c)
+{
+    float d = 1.0 / (r * r * 0.31830989 / pow(c * c * (r * r - 1) + 1, 2) + 1);
+    return d;
+}
+
+float G_d(float r, float c)
+{
+    float k = (r + 1) * (r + 1) / 8.0;
+    float g = c / (c * (1 - k) + k);
+    return g;
+}
+
+float G_i(float r, float c)
+{
+    float k = r * r / 2.0;
+    float g = c / (c * (1 - k) + k);
+    return g;
+}
+
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    float x = (float)id.x / 1024.0;
+    float y = (float)id.y / 1024.0;
+
+    // x: cosθi
+    float f = F(x);
+
+    // x: roughness
+    // y: cosθh
+    float d = D(x, y);
+
+    // x: roughness
+    // y: cosθ
+    float g_d = G_d(x, y);
+
+    // x: roughness
+    // y: cosθ
+    float g_i = G_i(x, y);
+
+    Result[id.xy] = float4(f, d, g_d, g_i);
+}
