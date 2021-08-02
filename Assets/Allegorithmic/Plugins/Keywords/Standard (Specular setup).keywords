@@ -1,0 +1,9 @@
+MAIN_TEXTURE diffuse
+_MainTex			diffuse
+_BumpMap			normal
+_ParallaxMap		height
+_EmissionMap		emissive
+_SpecGlossMap		specular
+_OcclusionMap		ambientOcclusion
+_DetailAlbedoMap
+_DetailNormalMap

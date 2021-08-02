@@ -34,23 +34,21 @@ float G_i(float r, float c)
 [numthreads(8,8,1)]
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
-    float x = (float)id.x / 1024.0;
-    float y = (float)id.y / 1024.0;
+    float x = (float)id.x / 256.0;
+    float y = (float)id.y / 256.0;
+    y = max(0.001, y);
 
-    // x: cosθi
-    float f = F(x);
+    // f: x: ndotl
+    float f = pow(1 - x, 5);
+    
+    // g: x: ndoth, y:ldoth
+    float g = 1.0 / (2.0 * x / y + 1.0);
 
-    // x: roughness
-    // y: cosθh
-    float d = D(x, y);
+    // d: x: roughness, y: ndoth
+    float rr = max(0.001, x * x);
+    float d = exp((y * y - 1) / (rr * y * y)) / (4 * rr * y * y * y * y);
+    // convert to 0.0-1.0
+    d = 1.0 / (d + 1.0);
 
-    // x: roughness
-    // y: cosθ
-    float g_d = G_d(x, y);
-
-    // x: roughness
-    // y: cosθ
-    float g_i = G_i(x, y);
-
-    Result[id.xy] = float4(f, d, g_d, g_i);
+    Result[id.xy] = float4(f, g, d, 1);
 }

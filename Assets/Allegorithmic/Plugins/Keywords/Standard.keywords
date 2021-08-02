@@ -1,0 +1,10 @@
+MAIN_TEXTURE baseColor
+_MainTex baseColor
+_BumpMap normal
+_ParallaxMap height
+_EmissionMap emissive
+_MetallicGlossMap metallic
+_OcclusionMap ambientOcclusion
+_DetailAlbedoMap
+_DetailNormalMap
+_DetailMask

@@ -1,0 +1,57 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+RWTexture2D<float4> Result;
+
+float F(float c)
+{
+    float f = 1 - c;
+    return f * f * f * f * f;
+}
+
+float D(float r, float c)
+{
+    float d = 1.0 / (r * r * 0.31830989 / pow(c * c * (r * r - 1) + 1, 2) + 1);
+    return d;
+}
+
+float G_d(float r, float c)
+{
+    float k = (r + 1) * (r + 1) / 8.0;
+    float g = c / (c * (1 - k) + k);
+    return g;
+}
+
+float G_i(float r, float c)
+{
+    float k = r * r / 2.0;
+    float g = c / (c * (1 - k) + k);
+    return g;
+}
+
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    float x = (float)id.x / 256.0;
+    float y = (float)id.y / 256.0;
+    y = max(0.001, y);
+
+    // f: x: ndotl
+    float f = pow(1 - x, 5);
+    
+    // g: x: ndoth, y:ldoth
+    float g = 1.0 / (2.0 * x / y + 1.0);
+
+    // d: x: roughness, y: ndoth
+    float rr = max(0.001, x * x);
+    float d = exp((y * y - 1) / (rr * y * y)) / (4 * rr * y * y * y * y);
+    // convert to 0.0-1.0
+    d = 1.0 / (d + 1.0);
+
+    // td: x: tdoth * tdoth y: exponent
+    float td = pow(sqrt(1 - x), y * 200);
+
+    Result[id.xy] = float4(f, g, d, td);
+}

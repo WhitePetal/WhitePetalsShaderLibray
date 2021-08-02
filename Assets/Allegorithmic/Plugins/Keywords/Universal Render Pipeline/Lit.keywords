@@ -1,0 +1,9 @@
+MAIN_TEXTURE baseColor
+MAIN_TEXTURE diffuse when _WorkflowMode 0
+_BaseMap	baseColor
+_MetallicGlossMap	metallic
+_SpecGlossMap	specular
+_BumpMap	normal
+_OcclusionMap	ambientOcclusion
+_EmissionMap	emissive
+_Smoothness	1

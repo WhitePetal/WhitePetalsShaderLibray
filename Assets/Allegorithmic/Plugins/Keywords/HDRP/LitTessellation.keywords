@@ -1,0 +1,21 @@
+MAIN_TEXTURE		baseColor
+_BaseColorMap		baseColor
+_MaskMap			mask
+_NormalMap			normal
+_NormalMapOS
+_BentNormalMap
+_BentNormalMapOS
+_HeightMap			height
+_DetailMap
+_TangentMap
+_TangentMapOS
+_AnisotropyMap
+_SubsurfaceMaskMap
+_IridescenceThicknessMap
+_IridescenceMaskMap
+_CoatMaskMap
+_EmissiveColorMap	emissive
+_SpecularColorMap	specular
+_DetailMask			detailMask
+_MetallicGlossMap	metallic
+_Metallic			1
