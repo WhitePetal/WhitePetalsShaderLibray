@@ -18,13 +18,9 @@
         [VectorRange(0.0, 2.0, 0.0, 2.0)]_NormalScales("MainNormalScale_DetilNormalScale", Vector) = (1.0, 1.0, 0.0, 0.0)
         [NoScaleOffset]_AmbientTex("Ambient Tex", Cube) = "white" {}
         _AmbientColor("Ambient Color", Color) = (1.0, 1.0, 1.0, 1.0)
-        _Shift1("Shift1", Range(-10, 10)) = 0.1
-        _Shift2("Shift2", Range(-10, 10)) = 0.1
         _ShiftTex("ShiftTex", 2D) = "white" {}
-        _SpecularWidth1("SpecularWidth1", Range(-1, -0.001)) = -0.5
-        _SpecularWidth2("SpecularWidth2", Range(-1, -0.001)) = -0.5
-        _Exponent1("Exponent1", Range(0, 1)) = 0.3
-        _Exponent2("Exponent2", Range(0, 1)) = 0.3
+        [VectorRange(0, 10.0, 1, 10.0, 0, 10.0, 1, 10.0, 0, 1.0, 0, 0.001, 0, 1.0, 0, 0.001)] _Shifts_SpecularWidths("Shift1_Shift2_SpecularWidth1_SpecularWidth2", Vector) = (0.1, 0.1, -0.5, -0.5)
+        [VectorRange(0, 1, 0, 1)]_Exponents("Exponent1_Exponent2", Vector) = (0.3, 0.3, 1.0, 1.0)
         _SpecColor1("SpecColor1", Color) = (1.0, 1.0, 1.0, 1.0)
         _SpecColor2("SpecColor2", Color) = (1.0, 1.0, 1.0, 1.0)
     }
@@ -71,9 +67,8 @@
         fixed3 _MetallicRoughnessAO;
         fixed2 _NormalScales;
         half4 _KdKsExpoureParalxScale;
-        half _Shift1, _Shift2;
-        half _Exponent1, _Exponent2;
-        fixed _SpecularWidth1, _SpecularWidth2;
+        half4 _Shifts_SpecularWidths;
+        fixed2 _Exponents;
 
         v2f vert (appdata v)
         {
@@ -96,9 +91,9 @@
             fixed4 detil = tex2D(_DetilTex, i.uv.zw);
             fixed detilMask = detil.a;
             half3 n = GetBlendNormalWorldFromMap(i, tex2D(_NormalTex, i.uv.xy), tex2D(_DetilNormalTex, i.uv.zw), _NormalScales.x, _NormalScales.y, detilMask);
-            fixed shift = tex2D(_ShiftTex, i.uv.xy).r;
-            half3 t1 = normalize(-i.binormal_world + _Shift1 * shift * n);
-            half3 t2 = normalize(-i.binormal_world + _Shift2 * shift * n);
+            half3 shiftN = tex2D(_ShiftTex, i.uv.xy).r * n;
+            half3 t1 = normalize(-i.binormal_world + _Shifts_SpecularWidths.x * shiftN);
+            half3 t2 = normalize(-i.binormal_world + _Shifts_SpecularWidths.y * shiftN);
             half3 v = normalize(UnityWorldSpaceViewDir(i.pos_world));
             half3 l = normalize(UnityWorldSpaceLightDir(i.pos_world));
             half3 h = normalize(l + v);
@@ -119,11 +114,11 @@
             half g = 1.0 / tex2D(_LUT, half2(ndoth, ldoth)).g - 1.0;
             g = saturate(min(ndotv * g, ndotl * g));
             half d = 1.0 / tex2D(_LUT, half2(roughness, ndoth)).b + 1.0;
-            half dirAtten1 = smoothstep(_SpecularWidth1, 0, t1doth);
-            half dirAtten2 = smoothstep(_SpecularWidth2, 0, t2doth);
+            half dirAtten1 = smoothstep(_Shifts_SpecularWidths.z, 0, t1doth);
+            half dirAtten2 = smoothstep(_Shifts_SpecularWidths.w, 0, t2doth);
 
-            half3 d1 = tex2D(_LUT, half2(t1doth * t1doth, _Exponent1)).a * dirAtten1 * _SpecColor1;
-            half3 d2 = tex2D(_LUT, half2(t2doth * t2doth, _Exponent2)).a * dirAtten2 * _SpecColor2;
+            half3 d1 = tex2D(_LUT, half2(t1doth * t1doth, _Exponents.x)).a * dirAtten1 * _SpecColor1;
+            half3 d2 = tex2D(_LUT, half2(t2doth * t2doth, _Exponents.y)).a * dirAtten2 * _SpecColor2;
             
             half3 albedo = lerp(_DiffuseColor * tex2D(_Albedo, i.uv.xy).rgb, _DetilColor * tex2D(_DetilTex, i.uv.zw).rgb, detilMask) * _KdKsExpoureParalxScale.x;
             half3 specular = _SpecularColor * _KdKsExpoureParalxScale.y;
@@ -185,5 +180,5 @@
             ENDCG
         }
     }
-    // CustomEditor "BRDF_LUT_Inspector"
+    CustomEditor "BSDF_LUT_KK_Inspector"
 }

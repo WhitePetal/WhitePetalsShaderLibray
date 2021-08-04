@@ -1,5 +1,115 @@
 Base path: 'D:/UnityHub/2019.4.25f1c1/Editor/Data', plugins path 'D:/UnityHub/2019.4.25f1c1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
+Cmd: preprocessCompute
+  insize=1607 outsize=1606 ok=1
+Cmd: compileComputeKernel
+  api=9 insize=1606 outsize=1997 ok=1
+Cmd: preprocess
+  insize=2299 outsize=363 ok=1
+Cmd: preprocessCompute
+  insize=1589 outsize=1588 ok=1
+Cmd: compileComputeKernel
+  api=9 insize=1588 outsize=1671 ok=1
+Cmd: preprocess
+  insize=2305 outsize=363 ok=1
+Cmd: preprocessCompute
+  insize=1619 outsize=1618 ok=1
+Cmd: preprocess
+  insize=2299 outsize=363 ok=1
+Cmd: preprocess
+  insize=2293 outsize=362 ok=1
+Cmd: preprocessCompute
+  insize=1635 outsize=1634 ok=1
+Cmd: compileComputeKernel
+  api=9 insize=1634 outsize=1671 ok=1
+Cmd: preprocess
+  insize=2299 outsize=363 ok=1
+Cmd: preprocess
+  insize=2309 outsize=363 ok=1
+Cmd: preprocess
+  insize=2315 outsize=363 ok=1
+Cmd: preprocess
+  insize=2305 outsize=363 ok=1
+Cmd: preprocess
+  insize=2299 outsize=363 ok=1
+Cmd: preprocess
+  insize=2299 outsize=361 ok=1
+Cmd: preprocess
+  insize=2299 outsize=361 ok=1
+Cmd: preprocessCompute
+  insize=1677 outsize=1676 ok=1
+Cmd: compileComputeKernel
+  api=9 insize=1676 outsize=1712 ok=1
+Cmd: preprocessCompute
+  insize=1689 outsize=1688 ok=1
+Cmd: preprocessCompute
+  insize=1713 outsize=1712 ok=1
+Cmd: preprocessCompute
+  insize=1713 outsize=1712 ok=1
+Cmd: compileComputeKernel
+  api=9 insize=1712 outsize=1714 ok=1
+Cmd: preprocessCompute
+  insize=1717 outsize=1716 ok=1
+Cmd: compileComputeKernel
+  api=9 insize=1716 outsize=1729 ok=1
+Cmd: preprocessCompute
+  insize=1709 outsize=1708 ok=1
+Cmd: compileComputeKernel
+  api=9 insize=1708 outsize=1675 ok=1
+Cmd: preprocess
+  insize=2293 outsize=363 ok=1
+Cmd: preprocess
+  insize=2293 outsize=363 ok=1
+Cmd: preprocess
+  insize=2293 outsize=363 ok=1
+Cmd: preprocess
+  insize=2293 outsize=363 ok=1
+Cmd: preprocess
+  insize=2299 outsize=363 ok=1
+Cmd: preprocess
+  insize=2299 outsize=363 ok=1
+Cmd: preprocess
+  insize=2303 outsize=363 ok=1
+Cmd: preprocess
+  insize=2297 outsize=363 ok=1
+Cmd: preprocess
+  insize=2299 outsize=363 ok=1
+Cmd: preprocess
+  insize=2302 outsize=363 ok=1
+Cmd: preprocess
+  insize=2304 outsize=363 ok=1
+Cmd: preprocess
+  insize=2305 outsize=363 ok=1
+Cmd: preprocess
+  insize=2309 outsize=363 ok=1
+Cmd: preprocess
+  insize=2326 outsize=363 ok=1
+Cmd: preprocess
+  insize=2397 outsize=363 ok=1
+Cmd: preprocess
+  insize=2416 outsize=363 ok=1
+Cmd: preprocess
+  insize=2428 outsize=363 ok=1
+Cmd: preprocess
+  insize=2435 outsize=363 ok=1
+Cmd: preprocess
+  insize=2437 outsize=363 ok=1
+Cmd: preprocess
+  insize=2432 outsize=363 ok=1
+Cmd: preprocess
+  insize=2435 outsize=363 ok=1
+Cmd: preprocess
+  insize=2440 outsize=362 ok=1
+Cmd: preprocess
+  insize=2442 outsize=363 ok=1
+Cmd: preprocess
+  insize=2442 outsize=363 ok=1
+Cmd: preprocess
+  insize=2450 outsize=363 ok=1
+Cmd: preprocess
+  insize=2454 outsize=363 ok=1
+Cmd: preprocess
+  insize=2456 outsize=363 ok=1
 Cmd: shutdown
 
 Quitting shader compiler process

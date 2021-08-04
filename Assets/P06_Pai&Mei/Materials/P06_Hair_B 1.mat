@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AmbientTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 8900000, guid: 1153dc89e66880c4eb7adc16ba588855, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BakedNormal:
@@ -284,7 +284,7 @@ Material:
     - _HighColor: {r: 0.22227661, g: 0.25339252, b: 0.254717, a: 1}
     - _KdKsExpoureParalxScale: {r: 0.3183099, g: 0.25, b: 0.21, a: 0.04}
     - _MatCapColor: {r: 0.3661445, g: 0.41509432, b: 0.41203496, a: 1}
-    - _MetallicRoughnessAO: {r: 0, g: 0.8, b: 1, a: 1}
+    - _MetallicRoughnessAO: {r: 0, g: 0.8, b: 0.21, a: 1}
     - _NormalScales: {r: 1, g: 1, b: 0, a: 0}
     - _Outline_Color: {r: 0.24705882, g: 0.36768618, b: 0.4627451, a: 1}
     - _RimLightColor: {r: 0.13843897, g: 0.14397381, b: 0.16037738, a: 1}

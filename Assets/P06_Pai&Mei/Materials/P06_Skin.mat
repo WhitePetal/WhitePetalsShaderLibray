@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: P06_Skin
-  m_Shader: {fileID: 4800000, guid: ca035891872022e4f80c952b3916e450, type: 3}
+  m_Shader: {fileID: 4800000, guid: 82e4e3f0d7ecbd04bb783e68386c7473, type: 3}
   m_ShaderKeywords: _EMISSIVE_SIMPLE _OUTLINE_NML
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 39cdf4ce8b1f0ec4b8ef59315d9060b7, type: 3}
+        m_Texture: {fileID: 2800000, guid: cbecaf880852d3748bc283e68e7a6a76, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MatCap_Sampler:
@@ -81,6 +81,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ShadingGradeMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Tex:
+        m_Texture: {fileID: 2800000, guid: 39cdf4ce8b1f0ec4b8ef59315d9060b7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -176,7 +180,7 @@ Material:
     - _2nd_ShadeColor: {r: 0.9245283, g: 0.87655747, b: 0.87655747, a: 1}
     - _Ap_RimLightColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 0.82558805, b: 0.7971698, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _Emissive_Color: {r: 0, g: 0, b: 0, a: 1}
     - _HighColor: {r: 0.16037738, g: 0.15810789, b: 0.15810789, a: 1}

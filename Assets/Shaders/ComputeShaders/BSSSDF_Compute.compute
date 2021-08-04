@@ -1,0 +1,44 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+RWTexture2D<float4> Result;
+
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    float x = (float)id.x / 512.0;
+    float y = (float)id.y / 512.0;
+    // x: ndotl y: ndotv
+
+    x = 2 * x - 1;
+    x = x * x;
+    y = 2 * y - 1;
+    y = y * y;
+    float r = 0.233 * exp(-(x+y) / (2 * 0.0064)) / (2 * 3.1415926 * 0.0064);
+    r += 0.1 * exp(-(x+y) / (2 * 0.0484)) / (2 * 3.1415926 * 0.0484);
+    r += 0.118 * exp(-(x+y) / (2 * 0.187)) / (2 * 3.1415926 * 0.187);
+    r += 0.113 * exp(-(x+y) / (2 * 0.567)) / (2 * 3.1415926 * 0.567);
+    r += 0.358 * exp(-(x+y) / (2 * 1.99)) / (2 * 3.1415926 * 1.99);
+    r += 0.078 * exp(-(x+y) / (2 * 7.41)) / (2 * 3.1415926 * 7.41);
+
+    float g = 0.455 * exp(-(x+y) / (2 * 0.0064)) / (2 * 3.1415926 * 0.0064);
+    g += 0.336 * exp(-(x+y) / (2 * 0.0484)) / (2 * 3.1415926 * 0.0484);
+    g += 0.198 * exp(-(x+y) / (2 * 0.187)) / (2 * 3.1415926 * 0.187);
+    g += 0.007 * exp(-(x+y) / (2 * 0.567)) / (2 * 3.1415926 * 0.567);
+    g += 0.004 * exp(-(x+y) / (2 * 1.99)) / (2 * 3.1415926 * 1.99);
+
+    float b = 0.649 * exp(-(x+y) / (2 * 0.0064)) / (2 * 3.1415926 * 0.0064);
+    b += 0.334 * exp(-(x+y) / (2 * 0.0484)) / (2 * 3.1415926 * 0.0484);
+    // 0
+    b += 0.007 * exp(-(x+y) / (2 * 0.567)) / (2 * 3.1415926 * 0.567);
+    // 0
+    // 0
+
+    float fresnel = 1.0 - 0.028 - (1 - 0.028) * pow(1 - y, 5);
+    // fresnel *= 10;
+
+    float3 col = normalize(float3(r, g, b));
+    Result[id.xy] = float4(r * 1, g * 1, b * 1,  1.0);
+}

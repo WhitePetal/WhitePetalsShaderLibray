@@ -52,4 +52,27 @@ public class GenerateRenderLUT : Editor
 		File.WriteAllBytes(lutPath + "/BSDF_KK_LUT.png", data);
 		Texture2D.DestroyImmediate(tex);
 	}
+
+	[MenuItem("Tools/GenerateBSSSDF_LUT")]
+	private static void GenerateBSSSDF_LUT()
+	{
+		ComputeShader cs = AssetDatabase.LoadAssetAtPath<ComputeShader>("Assets/Shaders/ComputeShaders/BSSSDF_Compute.compute");
+		RenderTexture rt = RenderTexture.GetTemporary(512, 512, 0);
+		rt.enableRandomWrite = true;
+		rt.Create();
+		int kernel = cs.FindKernel("CSMain");
+		cs.SetTexture(kernel, "Result", rt);
+		cs.Dispatch(kernel, 512 / 8, 512 / 8, 1);
+		Texture2D tex = new Texture2D(512, 512, TextureFormat.ARGB32, false);
+		RenderTexture activeRT = RenderTexture.active;
+		RenderTexture.active = rt;
+		tex.ReadPixels(new Rect(0, 0, 512, 512), 0, 0);
+		tex.Apply();
+		RenderTexture.active = activeRT;
+		RenderTexture.ReleaseTemporary(rt);
+		byte[] data = tex.EncodeToPNG();
+		if (!Directory.Exists(lutPath)) Directory.CreateDirectory(lutPath);
+		File.WriteAllBytes(lutPath + "/BSSSDF_LUT.png", data);
+		Texture2D.DestroyImmediate(tex);
+	}
 }

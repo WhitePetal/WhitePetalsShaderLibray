@@ -57,5 +57,8 @@ public class BRDF_LUT_Inspector : ShaderGUI
 		EditorGUI.indentLevel += 2;
 		materialEditor.TexturePropertySingleLine(new GUIContent("Ambient"), ambient, ambientColor);
 		EditorGUI.indentLevel -= 2;
+
+		GUILayout.Space(20);
+		materialEditor.RenderQueueField();
 	}
 }

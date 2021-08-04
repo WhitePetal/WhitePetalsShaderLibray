@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 01
-  m_Shader: {fileID: 4800000, guid: eaeb2f534726fa6409257d720a236c62, type: 3}
+  m_Shader: {fileID: 4800000, guid: 5aa7a6bdab3f8df4a8c4696c34465c66, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -72,7 +72,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 669daa4bd63e4204dacb9aa01a164a7f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -88,6 +88,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallxTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ShiftTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -122,5 +130,13 @@ Material:
     - _DetilColor: {r: 1, g: 1, b: 1, a: 1}
     - _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Exponents: {r: 0.3, g: 0.3, b: 1, a: 1}
     - _Fresnel: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 1}
+    - _HDRColor: {r: 0, g: 6.467057, b: 9.082411, a: 1}
+    - _KdKsExpoureParalxScale: {r: 0.3183099, g: 0.25, b: 0.21, a: 0.04}
+    - _MetallicRoughnessAO: {r: 0, g: 0.4, b: 0, a: 1}
+    - _NormalScales: {r: 1, g: 1, b: 0, a: 0}
+    - _Shifts_SpecularWidths: {r: 0.1, g: 0.1, b: -0.5, a: -0.5}
+    - _SpecColor1: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecColor2: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
