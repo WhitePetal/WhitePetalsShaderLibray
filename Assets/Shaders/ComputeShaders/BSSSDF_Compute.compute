@@ -5,40 +5,45 @@
 // with cs.SetTexture
 RWTexture2D<float4> Result;
 
+#define PI 3.141592653
+
+float Gaussian(float v, float r)
+{
+    return 1.0 / sqrt(2 * PI * v) * exp(-(r*r) / (2 * v));
+}
+
+float3 Scatter(float r)
+{
+    return Gaussian(0.0064 * 1.414, r) * float3(0.233, 0.455, 0.649) +
+    Gaussian(0.0484 * 1.414, r) * float3(0.1, 0.336, 0.344) +
+    Gaussian(0.1870 * 1.414, r) * float3(0.118, 0.198, 0.0) +
+    Gaussian(0.567 * 1.414, r) * float3(0.113, 0.007, 0.007) +
+    Gaussian(1.99 * 1.414, r) * float3(0.358, 0.004, 0.000) +
+    Gaussian(7.4100 * 1.414, r) * float3(0.078, 0.000, 0.000);
+}
+
 [numthreads(8,8,1)]
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
     float x = (float)id.x / 512.0;
     float y = (float)id.y / 512.0;
-    // x: ndotl y: ndotv
+    // x: ndotl y: 1 / r
+    float theta = acos(x * 2 - 1);
+    float skinRadius = 1.0 / clamp(y, 0.001, 1.0);
 
-    x = 2 * x - 1;
-    x = x * x;
-    y = 2 * y - 1;
-    y = y * y;
-    float r = 0.233 * exp(-(x+y) / (2 * 0.0064)) / (2 * 3.1415926 * 0.0064);
-    r += 0.1 * exp(-(x+y) / (2 * 0.0484)) / (2 * 3.1415926 * 0.0484);
-    r += 0.118 * exp(-(x+y) / (2 * 0.187)) / (2 * 3.1415926 * 0.187);
-    r += 0.113 * exp(-(x+y) / (2 * 0.567)) / (2 * 3.1415926 * 0.567);
-    r += 0.358 * exp(-(x+y) / (2 * 1.99)) / (2 * 3.1415926 * 1.99);
-    r += 0.078 * exp(-(x+y) / (2 * 7.41)) / (2 * 3.1415926 * 7.41);
+    float3 m = 0.0;
+    float3 c = 0.0;
+    
+    [unroll(315)]
+    for(float a = -PI; a <= PI; a += 0.02)
+    {
+        float sampleAngle = theta + a;
+        float diffuse = saturate(cos(sampleAngle));
+        float sampleDist = abs(2 * skinRadius * sin(a * 0.5));
+        float3 weights = Scatter(sampleDist);
+        m += diffuse * weights * 0.02;
+        c += weights * 0.02;
+    }
 
-    float g = 0.455 * exp(-(x+y) / (2 * 0.0064)) / (2 * 3.1415926 * 0.0064);
-    g += 0.336 * exp(-(x+y) / (2 * 0.0484)) / (2 * 3.1415926 * 0.0484);
-    g += 0.198 * exp(-(x+y) / (2 * 0.187)) / (2 * 3.1415926 * 0.187);
-    g += 0.007 * exp(-(x+y) / (2 * 0.567)) / (2 * 3.1415926 * 0.567);
-    g += 0.004 * exp(-(x+y) / (2 * 1.99)) / (2 * 3.1415926 * 1.99);
-
-    float b = 0.649 * exp(-(x+y) / (2 * 0.0064)) / (2 * 3.1415926 * 0.0064);
-    b += 0.334 * exp(-(x+y) / (2 * 0.0484)) / (2 * 3.1415926 * 0.0484);
-    // 0
-    b += 0.007 * exp(-(x+y) / (2 * 0.567)) / (2 * 3.1415926 * 0.567);
-    // 0
-    // 0
-
-    float fresnel = 1.0 - 0.028 - (1 - 0.028) * pow(1 - y, 5);
-    // fresnel *= 10;
-
-    float3 col = normalize(float3(r, g, b));
-    Result[id.xy] = float4(r * 1, g * 1, b * 1,  1.0);
+    Result[id.xy] = float4(m  / c,  1.0);
 }

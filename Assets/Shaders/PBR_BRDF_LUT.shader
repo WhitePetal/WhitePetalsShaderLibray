@@ -111,7 +111,7 @@
 
             f = _Fresnel + (1.0 - _Fresnel) * tex2D(_LUT, half2(ndotv, 1)).r;
             fixed3 ambient = _AmbientColor * texCUBE(_AmbientTex, reflect(v, n)).rgb;
-            fixed3 amibientCol = (albedo * oneMinusRoughness * oneMinusRoughness + saturate(specular * f * 0.25 / (ndotv * roughness * roughness))) * ambient;
+            fixed3 amibientCol = (albedo * (1.0 - f) + saturate(specular * f * 0.25 / (ndotv * roughness * roughness))) * ambient;
 
             fixed4 col = fixed4((brdfCol + amibientCol) * ao, 1.0);
             return col;

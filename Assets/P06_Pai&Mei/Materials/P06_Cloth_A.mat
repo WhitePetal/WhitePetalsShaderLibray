@@ -84,7 +84,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LUT:
-        m_Texture: {fileID: 2800000, guid: 491fc47081182694fa1592fcdfe07ac4, type: 3}
+        m_Texture: {fileID: 2800000, guid: c1d86f8921c706c4a8d02131eece3f2a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MRATex:
@@ -128,6 +128,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallxTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -272,7 +276,10 @@ Material:
     - _Emissive_Color: {r: 0, g: 1, b: 0.9299681, a: 1}
     - _Fresnel: {r: 0.04, g: 0.04, b: 0.04, a: 1}
     - _HighColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
+    - _KdKsExpoureParalxScale: {r: 0.3183099, g: 0.25, b: 0, a: 0.04}
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MetallicRoughnessAO: {r: 0, g: 0.8, b: 1, a: 1}
+    - _NormalScales: {r: 1, g: 1, b: 0, a: 0}
     - _Outline_Color: {r: 0.020113904, g: 0.0303007, b: 0.03773582, a: 1}
     - _RimLightColor: {r: 0.24635102, g: 0.25774297, b: 0.3018868, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
