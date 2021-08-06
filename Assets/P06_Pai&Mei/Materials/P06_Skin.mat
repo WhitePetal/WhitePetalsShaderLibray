@@ -87,8 +87,12 @@ Material:
         m_Texture: {fileID: 2800000, guid: 9c0636c689c8cbe48a614fb9aea1965a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _NormalTex:
+    - _NormalMipTex:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalTex:
+        m_Texture: {fileID: 2800000, guid: 9c0636c689c8cbe48a614fb9aea1965a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:
@@ -214,21 +218,23 @@ Material:
     m_Colors:
     - _1st_ShadeColor: {r: 0.9528302, g: 0.9303578, b: 0.93316686, a: 1}
     - _2nd_ShadeColor: {r: 0.9245283, g: 0.87655747, b: 0.87655747, a: 1}
-    - _AmbientColor: {r: 0.8396226, g: 0.5109024, b: 0.5109024, a: 1}
+    - _AmbientColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+    - _AmbientTexColor: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
     - _Ap_RimLightColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 0.9009434, b: 0.9009434, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DetilColor: {r: 1, g: 1, b: 1, a: 1}
-    - _DiffuseColor: {r: 1, g: 0.94199383, b: 0.9292453, a: 1}
+    - _DiffuseColor: {r: 1, g: 0.9764151, b: 0.9764151, a: 1}
     - _Emissive_Color: {r: 0, g: 0, b: 0, a: 1}
     - _Fresnel: {r: 0.04, g: 0.04, b: 0.04, a: 1}
     - _HighColor: {r: 0.16037738, g: 0.15810789, b: 0.15810789, a: 1}
-    - _KdKsExpoureParalxScale: {r: 0.56, g: 0.25, b: 0, a: 0.04}
+    - _KdKsExpoureParalxScale: {r: 0.96, g: 0.25, b: 0, a: 0.04}
     - _MatCapColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
-    - _MetallicRoughnessAO: {r: 0, g: 0.82, b: 0, a: 1}
+    - _MetallicRoughnessAO: {r: 0, g: 0.802, b: 0.021, a: 1}
     - _NormalScales: {r: 1, g: 1, b: 0, a: 0}
     - _Outline_Color: {r: 0.5943396, g: 0.40089887, b: 0.45016697, a: 1}
     - _RimLightColor: {r: 0.2264151, g: 0.20398718, b: 0.20959416, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TuneNormalBlur: {r: 0.39999998, g: 0.19999996, b: 0.09999997, a: 1}
     - _ViewShift: {r: 0, g: 0, b: 0, a: 1}

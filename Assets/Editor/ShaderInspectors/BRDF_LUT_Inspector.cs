@@ -33,6 +33,7 @@ public class BRDF_LUT_Inspector : ShaderGUI
 		materialEditor.ShaderProperty(FindProperty("_KdKsExpoureParalxScale", properties), "KdKsExpoureParalxScale");
 		materialEditor.TexturePropertySingleLine(new GUIContent("HeightMap"), parallx);
 		materialEditor.TexturePropertySingleLine(new GUIContent("Metallic(R) Roughness(G)\nAO(B)"), mra);
+		GUILayout.Space(20);
 		materialEditor.ColorProperty(fresnel, "Fresnel0");
 		materialEditor.ShaderProperty(FindProperty("_MetallicRoughnessAO", properties), "_MetallicRoughnessAO");
 		materialEditor.TextureScaleOffsetProperty(albedo);

@@ -25,25 +25,25 @@ float3 Scatter(float r)
 [numthreads(8,8,1)]
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
-    float x = (float)id.x / 512.0;
-    float y = (float)id.y / 512.0;
+    float x = (float)id.x / 2048.0;
+    float y = (float)id.y / 2048.0;
     // x: ndotl y: 1 / r
-    float theta = acos(x * 2 - 1);
-    float skinRadius = 1.0 / clamp(y, 0.001, 1.0);
+    float theta = acos(x * 2.0 - 1.0);
+    float skinRadius = 1.0 / clamp(y, 0.0001, 1.0);
 
     float3 m = 0.0;
     float3 c = 0.0;
     
-    [unroll(315)]
-    for(float a = -PI; a <= PI; a += 0.02)
+    // [unroll(630)]
+    for(float a = -PI; a <= PI; a += 0.0001)
     {
         float sampleAngle = theta + a;
         float diffuse = saturate(cos(sampleAngle));
         float sampleDist = abs(2 * skinRadius * sin(a * 0.5));
         float3 weights = Scatter(sampleDist);
-        m += diffuse * weights * 0.02;
-        c += weights * 0.02;
+        m += diffuse * weights * 0.0001;
+        c += weights * 0.0001;
     }
 
-    Result[id.xy] = float4(m  / c,  1.0);
+    Result[id.xy] = float4(pow(m  / c, 1.0 / 2.2),  1.0);
 }
