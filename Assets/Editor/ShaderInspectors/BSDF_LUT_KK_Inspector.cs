@@ -26,9 +26,12 @@ public class BSDF_LUT_KK_Inspector : ShaderGUI
 
 		MaterialProperty shiftTex = FindProperty("_ShiftTex", properties);
 		MaterialProperty shifts_specularWidths = FindProperty("_Shifts_SpecularWidths", properties);
-		MaterialProperty exponents = FindProperty("_Exponents", properties);
+		MaterialProperty exponents = FindProperty("_Exponents_SpecStrengths", properties);
 		MaterialProperty specularColor1 = FindProperty("_SpecColor1", properties);
 		MaterialProperty specularColor2 = FindProperty("_SpecColor2", properties);
+
+		MaterialProperty point_light_color = FindProperty("_PointLightColor", properties);
+		MaterialProperty point_light_pos = FindProperty("_PointLightPos", properties);
 
 		materialEditor.TexturePropertySingleLine(new GUIContent("LUT"), lut);
 		GUILayout.Label(new GUIContent("MainTex"));
@@ -71,9 +74,16 @@ public class BSDF_LUT_KK_Inspector : ShaderGUI
 		materialEditor.TexturePropertySingleLine(new GUIContent("Shift Texture"), shiftTex);
 		materialEditor.TextureScaleOffsetProperty(shiftTex);
 		materialEditor.ShaderProperty(shifts_specularWidths, "Shifts_SpecularWidth");
-		materialEditor.ShaderProperty(exponents, "Exponents");
+		materialEditor.ShaderProperty(exponents, "Exponents_SpecStrengths");
 		materialEditor.ShaderProperty(specularColor1, new GUIContent("SpecularColor1"));
 		materialEditor.ShaderProperty(specularColor2, new GUIContent("SpecularColor2"));
+		EditorGUI.indentLevel -= 2;
+
+		GUILayout.Space(20);
+		GUILayout.Label(new GUIContent("Custome Point Light"));
+		EditorGUI.indentLevel += 2;
+		materialEditor.ShaderProperty(point_light_color, new GUIContent("Point Light Color"));
+		materialEditor.ShaderProperty(point_light_pos, new GUIContent("Point Light Position"));
 		EditorGUI.indentLevel -= 2;
 
 		GUILayout.Space(20);

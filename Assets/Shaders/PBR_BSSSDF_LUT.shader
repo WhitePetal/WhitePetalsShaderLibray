@@ -20,6 +20,8 @@
         [NoScaleOffset]_AmbientTex("Ambient Tex", Cube) = "white" {}
         _AmbientTexColor("AmbientTex Color", Color) = (0.5, 0.5, 0.5, 1.0)
         _AmbientColor("Ambient Color", Color) = (.5, .5, .5, .5)
+        _PointLightColor("Point Light Color", Color) = (0.5492168, 0.6934489, 0.9622642, 1.0)
+        [ObjPositionVector]_PointLightPos("Point Light Pos", Vector) = (1.0, .0, .0, 1.0)
     }
     SubShader
     {
@@ -58,7 +60,8 @@
                 half3 binormal_world : TEXCOORD3;
                 float3 pos_world : TEXCOORD4;
                 half3 view_tangent : TEXCOORD5;
-                SHADOW_COORDS(6)
+                half4 point_light_params : TEXCOORD6;
+                SHADOW_COORDS(7)
             };
 
             #include "../Shaders/Librays/TransformLibrary.cginc"
@@ -67,10 +70,11 @@
             float4 _Albedo_ST, _DetilTex_ST;
             samplerCUBE _AmbientTex;
 
-            fixed3 _DiffuseColor, _DetilColor, _Fresnel, _AmbientColor, _SpecularColor, _AmbientTexColor;
+            fixed3 _DiffuseColor, _DetilColor, _Fresnel, _AmbientColor, _SpecularColor, _AmbientTexColor, _PointLightColor;
             fixed3 _MetallicRoughnessAO;
             fixed2 _NormalScales;
             half4 _KdKsExpoureParalxScale;
+            half3 _PointLightPos;
 
             v2f vert (appdata v)
             {
@@ -83,6 +87,9 @@
                 o.binormal_world = cross(o.normal_world, o.tangent_world) * v.tangent.w;
                 o.pos_world = mul(unity_ObjectToWorld, v.vertex).xyz;
                 o.view_tangent = GetTangentSpaceViewDir(v.tangent, v.normal, v.vertex);
+                o.point_light_params.xyz = _PointLightPos - v.vertex.xyz;
+                o.point_light_params.w = 1.0 / clamp(dot(o.point_light_params.xyz, o.point_light_params.xyz), 0.001, 1.0);
+                o.point_light_params.xyz = mul(unity_ObjectToWorld, float4(_PointLightPos, 1.0)) - o.pos_world;
                 TRANSFER_SHADOW(o);
                 return o;
             }
@@ -121,6 +128,7 @@
 
                 UNITY_LIGHT_ATTENUATION(atten, i, i.pos_world);
                 fixed3 brdfCol = ((1 - f) * oneMinusMetallic * albedo * ndotl + specular * f * g * d / ndotv) * _LightColor0.rgb * atten;
+                brdfCol += _PointLightColor * i.point_light_params.w * tex2D(_LUT_SSS, half2(saturate(dot(normalize(i.point_light_params.xyz), n)), r)) * albedo;
 
                 f = _Fresnel + (1.0 - _Fresnel) * tex2D(_LUT, half2(ndotv, 1)).r;
                 fixed3 ambient = _AmbientColor + texCUBE(_AmbientTex, reflect(-v, n)).rgb * _AmbientTexColor;

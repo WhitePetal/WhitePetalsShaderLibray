@@ -22,6 +22,18 @@ float3 Scatter(float r)
     Gaussian(7.4100 * 1.414, r) * float3(0.078, 0.000, 0.000);
 }
 
+float3 ACESToneMapping(float3 color, float adapted_lum)
+{
+	const float A = 2.51f;
+	const float B = 0.03f;
+	const float C = 2.43f;
+	const float D = 0.59f;
+	const float E = 0.14f;
+
+	color *= adapted_lum;
+	return (color * (A * color + B)) / (color * (C * color + D) + E);
+}
+
 [numthreads(8,8,1)]
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
@@ -44,6 +56,8 @@ void CSMain (uint3 id : SV_DispatchThreadID)
         m += diffuse * weights * 0.0001;
         c += weights * 0.0001;
     }
+    float3 res = m / c;
+    res = ACESToneMapping(res, 1.2);
 
-    Result[id.xy] = float4(pow(m  / c, 1.0 / 2.2),  1.0);
+    Result[id.xy] = float4(res,  1.0);
 }

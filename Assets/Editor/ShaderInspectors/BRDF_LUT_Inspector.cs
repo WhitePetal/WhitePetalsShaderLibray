@@ -5,6 +5,7 @@ using UnityEditor;
 
 public class BRDF_LUT_Inspector : ShaderGUI
 {
+	private Transform curObj;
 	public override void OnGUI(MaterialEditor materialEditor, MaterialProperty[] properties)
 	{
 		//base.OnGUI(materialEditor, properties);
@@ -16,6 +17,9 @@ public class BRDF_LUT_Inspector : ShaderGUI
 		MaterialProperty parallx = FindProperty("_ParallxTex", properties);
 		MaterialProperty mra = FindProperty("_MRATex", properties);
 		MaterialProperty fresnel = FindProperty("_Fresnel", properties);
+
+		MaterialProperty point_light_color = FindProperty("_PointLightColor", properties);
+		MaterialProperty point_light_pos = FindProperty("_PointLightPos", properties);
 
 		MaterialProperty detil = FindProperty("_DetilTex", properties);
 		MaterialProperty detilColor = FindProperty("_DetilColor", properties);
@@ -51,6 +55,13 @@ public class BRDF_LUT_Inspector : ShaderGUI
 		GUILayout.Label(new GUIContent("NormalScales"));
 		EditorGUI.indentLevel += 2;
 		materialEditor.ShaderProperty(FindProperty("_NormalScales", properties), "_NormalScales");
+		EditorGUI.indentLevel -= 2;
+
+		GUILayout.Space(20);
+		GUILayout.Label(new GUIContent("Custome Point Light"));
+		EditorGUI.indentLevel += 2;
+		materialEditor.ShaderProperty(point_light_color, new GUIContent("Point Light Color"));
+		materialEditor.ShaderProperty(point_light_pos, new GUIContent("Point Light Position"));
 		EditorGUI.indentLevel -= 2;
 
 		GUILayout.Space(20);

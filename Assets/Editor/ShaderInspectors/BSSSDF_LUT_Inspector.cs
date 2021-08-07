@@ -25,6 +25,9 @@ public class BSSSDF_LUT_Inspector : ShaderGUI
 		MaterialProperty ambient = FindProperty("_AmbientTex", properties);
 		MaterialProperty ambientColor = FindProperty("_AmbientColor", properties);
 
+		MaterialProperty point_light_color = FindProperty("_PointLightColor", properties);
+		MaterialProperty point_light_pos = FindProperty("_PointLightPos", properties);
+
 		materialEditor.TexturePropertySingleLine(new GUIContent("LUT"), lut);
 		materialEditor.TexturePropertySingleLine(new GUIContent("LUT_SSS"), lut_sss);
 		GUILayout.Label(new GUIContent("MainTex"));
@@ -53,6 +56,13 @@ public class BSSSDF_LUT_Inspector : ShaderGUI
 		GUILayout.Label(new GUIContent("NormalScales"));
 		EditorGUI.indentLevel += 2;
 		materialEditor.ShaderProperty(FindProperty("_NormalScales", properties), "_NormalScales");
+		EditorGUI.indentLevel -= 2;
+
+		GUILayout.Space(20);
+		GUILayout.Label(new GUIContent("Custome Point Light"));
+		EditorGUI.indentLevel += 2;
+		materialEditor.ShaderProperty(point_light_color, new GUIContent("Point Light Color"));
+		materialEditor.ShaderProperty(point_light_pos, new GUIContent("Point Light Pos"));
 		EditorGUI.indentLevel -= 2;
 
 		GUILayout.Space(20);

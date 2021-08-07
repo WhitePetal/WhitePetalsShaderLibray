@@ -67,6 +67,7 @@
     <Compile Include="Assets\Editor\ShaderInspectors\BRDF_LUT_Inspector.cs" />
     <Compile Include="Assets\Editor\ShaderInspectors\BSDF_LUT_KK_Inspector.cs" />
     <Compile Include="Assets\Editor\ShaderInspectors\BSSSDF_LUT_Inspector.cs" />
+    <Compile Include="Assets\Editor\ShaderInspectors\ObjPositionVectorDrawer.cs" />
     <Compile Include="Assets\Editor\ShaderInspectors\VectorRangeDrawer.cs" />
     <Compile Include="Assets\Editor\Tools\GenerateRenderLUT.cs" />
     <Compile Include="Assets\P06_Pai&amp;Mei\Toon\Editor\CopyMaterialParameter.cs" />

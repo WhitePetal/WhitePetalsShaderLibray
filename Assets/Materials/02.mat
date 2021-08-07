@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 02
-  m_Shader: {fileID: 4800000, guid: 82e4e3f0d7ecbd04bb783e68386c7473, type: 3}
+  m_Shader: {fileID: 4800000, guid: 5aa7a6bdab3f8df4a8c4696c34465c66, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LUT:
-        m_Texture: {fileID: 2800000, guid: c1d86f8921c706c4a8d02131eece3f2a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0a55a89876779d04997bea24d119cd95, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LUT_SSS:
@@ -95,6 +95,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ShiftTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Tex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -123,9 +127,16 @@ Material:
     - _DetilColor: {r: 1, g: 1, b: 1, a: 1}
     - _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Exponents: {r: 0.511, g: 0.288, b: 1, a: 1}
+    - _Exponents_SpecStrengths: {r: 0.3, g: 0.3, b: 1.48, a: 1}
     - _Fresnel: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 1}
-    - _KdKsExpoureParalxScale: {r: 0.3183099, g: 0.25, b: 0, a: 0.05}
+    - _KdKsExpoureParalxScale: {r: 0.32, g: 2.46, b: 0.203, a: 0.05}
     - _MetallicRoughnessAO: {r: 0, g: 0.65, b: 1, a: 1}
     - _NormalScales: {r: 1, g: 1, b: 0, a: 0}
+    - _PointLightColor: {r: 0.5492168, g: 0.6934489, b: 0.9622641, a: 1}
+    - _PointLightPos: {r: 0, g: 0.09684777, b: -1.2006094, a: 1}
+    - _Shifts_SpecularWidths: {r: -0.26, g: -1.09, b: -0.496, a: -0.5}
+    - _SpecColor1: {r: 1, g: 0, b: 0, a: 1}
+    - _SpecColor2: {r: 0.1448469, g: 0.23472884, b: 0.8773585, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _TuneNormalBlur: {r: 0.8490566, g: 0.55991757, b: 0.41251338, a: 1}

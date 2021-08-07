@@ -173,6 +173,7 @@
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\Toon_ShadingGradeMap_Tess_StencilMask.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Toon_DoubleShadeWithFeather_Mobile.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\ToonColor_ShadingGradeMap_Transparent_Tess_StencilOut.shader" />
+    <None Include="Assets\Shaders\Librays\ShaderUtil.cginc" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\UCTS_DoubleShadeWithFeather_tess.cginc" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\Toon_ShadingGradeMap_TransClipping_Tess_StencilMask.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Toon_ShadingGradeMap_AngelRing_Mobile_StencilOut.shader" />
