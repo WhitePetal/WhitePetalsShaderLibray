@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: P06_Hair_B
-  m_Shader: {fileID: 4800000, guid: aebd33b74ef849a4882b4a8d55f0f0c9, type: 3}
+  m_Shader: {fileID: 4800000, guid: 5aa7a6bdab3f8df4a8c4696c34465c66, type: 3}
   m_ShaderKeywords: _OUTLINE_NML
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -25,6 +25,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _2nd_ShadeMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Albedo:
+        m_Texture: {fileID: 2800000, guid: 8039734ea9ad13d4dae326a4b62f7e94, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _AmbientTex:
+        m_Texture: {fileID: 8900000, guid: 3b5d67736d7b8ad4f8da4d58eaef0b98, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BakedNormal:
@@ -55,6 +63,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DetilNormalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetilTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -65,6 +81,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _HighColor_Tex:
         m_Texture: {fileID: 2800000, guid: d4e3b858a4d9d7347b9671abe9724ec9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LUT:
+        m_Texture: {fileID: 2800000, guid: 0a55a89876779d04997bea24d119cd95, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MRATex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -87,6 +111,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NormalTex:
+        m_Texture: {fileID: 2800000, guid: 6859e96a6d3c2b84984b54c73b2c900e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -100,6 +128,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallxTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -117,6 +149,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ShadingGradeMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ShiftTex:
+        m_Texture: {fileID: 2800000, guid: d4e3b858a4d9d7347b9671abe9724ec9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -229,14 +265,28 @@ Material:
     m_Colors:
     - _1st_ShadeColor: {r: 0.8415806, g: 0.9056604, b: 0.8992524, a: 1}
     - _2nd_ShadeColor: {r: 0.6117647, g: 0.6573543, b: 0.7254902, a: 1}
+    - _AmbientColor: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
+    - _DetilColor: {r: 1, g: 1, b: 1, a: 1}
+    - _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _Emissive_Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Exponents_SpecStrengths: {r: 1, g: 0.081, b: 0.7, a: 1.5}
+    - _Fresnel: {r: 0.04, g: 0.04, b: 0.04, a: 1}
     - _HighColor: {r: 0.22227661, g: 0.25339252, b: 0.254717, a: 1}
+    - _KdKsExpoureParalxScale: {r: 0.61, g: 0.56, b: 0.173, a: 0.04}
     - _MatCapColor: {r: 0.3661445, g: 0.41509432, b: 0.41203496, a: 1}
+    - _MetallicRoughnessAO: {r: 0, g: 0.8, b: 1, a: 1}
+    - _NormalScales: {r: 0, g: 1, b: 0, a: 0}
     - _Outline_Color: {r: 0.24705882, g: 0.36768618, b: 0.4627451, a: 1}
+    - _PointLightColor: {r: 0.5492168, g: 0.6934489, b: 0.9622641, a: 1}
+    - _PointLightPos: {r: 1.0000001, g: 1.1740121, b: 0.0000000036670826, a: 1}
     - _RimLightColor: {r: 0.13843897, g: 0.14397381, b: 0.16037738, a: 1}
+    - _Shifts_SpecularWidths: {r: -1.7, g: -1.72, b: -0.182, a: -0.5}
+    - _SpecColor1: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
+    - _SpecColor2: {r: 0.51690996, g: 0.8431826, b: 0.9056604, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ViewShift: {r: 0, g: 0, b: 0, a: 1}

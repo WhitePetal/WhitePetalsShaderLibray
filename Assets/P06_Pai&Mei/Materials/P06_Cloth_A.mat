@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AmbientTex:
-        m_Texture: {fileID: 8900000, guid: 3e80b688af9b1d84ea52c5d36bb1cbbd, type: 3}
+        m_Texture: {fileID: 8900000, guid: 3b5d67736d7b8ad4f8da4d58eaef0b98, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BakedNormal:
@@ -265,7 +265,7 @@ Material:
     m_Colors:
     - _1st_ShadeColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
     - _2nd_ShadeColor: {r: 0.735849, g: 0.73237807, b: 0.73237807, a: 1}
-    - _AmbientColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+    - _AmbientColor: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
@@ -276,7 +276,7 @@ Material:
     - _Emissive_Color: {r: 0, g: 1, b: 0.9299681, a: 1}
     - _Fresnel: {r: 0.04, g: 0.04, b: 0.04, a: 1}
     - _HighColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
-    - _KdKsExpoureParalxScale: {r: 0.3183099, g: 0.25, b: 0, a: 0.04}
+    - _KdKsExpoureParalxScale: {r: 0.57, g: 0.25, b: 0.108, a: 0.04}
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
     - _MetallicRoughnessAO: {r: 0, g: 0.8, b: 1, a: 1}
     - _NormalScales: {r: 1, g: 1, b: 0, a: 0}
