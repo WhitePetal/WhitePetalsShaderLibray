@@ -91,7 +91,7 @@
                 o.uv.zw = TRANSFORM_TEX(v.uv, _DetilTex); // detil map
                 o.normal_world = UnityObjectToWorldDir(v.normal);
                 o.tangent_world = UnityObjectToWorldDir(v.tangent);
-                o.binormal_world = -cross(o.normal_world, o.tangent_world) * v.tangent.w * unity_WorldTransformParams.w;
+                o.binormal_world = cross(o.normal_world, o.tangent_world) * v.tangent.w * unity_WorldTransformParams.w;
                 o.pos_world = mul(unity_ObjectToWorld, v.vertex).xyz;
                 o.view_tangent = GetTangentSpaceViewDir(v.tangent, v.normal, v.vertex);
                 o.point_light_params.xyz = _PointLightPos - v.vertex.xyz;

@@ -229,7 +229,7 @@ Material:
     - _Emissive_Color: {r: 0, g: 0, b: 0, a: 1}
     - _Fresnel: {r: 0.04, g: 0.04, b: 0.04, a: 1}
     - _HighColor: {r: 0.16037738, g: 0.15810789, b: 0.15810789, a: 1}
-    - _KdKsExpoureParalxScale: {r: 0.9, g: 0.25, b: 0.192, a: 0.04}
+    - _KdKsExpoureParalxScale: {r: 0.48, g: 0.25, b: 0.192, a: 0.04}
     - _MatCapColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
     - _MetallicRoughnessAO: {r: 0, g: 0.802, b: 0.021, a: 1}
     - _NormalScales: {r: 1, g: 1, b: 0, a: 0}
