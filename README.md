@@ -9,7 +9,7 @@
 
 | 功能 | 支持 |
 | --- | --- |
-| forward add | × |
+| forward add | √ |
 | 阴影 | √ |
 | 烘焙光 | × |
 | 自带点光源 | √ |
@@ -17,7 +17,7 @@
 ## PBR_BSRDF_KK_LUT
 | 功能 | 支持 |
 | --- | --- |
-| forward add | × |
+| forward add | √ |
 | 阴影 | √ |
 | 烘焙光 | × |
 | 自带点光源 | √ |
@@ -25,7 +25,7 @@
 ## PBR_BSSSDF_LUT
 | 功能 | 支持 |
 | --- | --- |
-| forward add | × |
+| forward add | √ |
 | 阴影 | √ |
 | 烘焙光 | × |
 | 自带点光源 | √ |
