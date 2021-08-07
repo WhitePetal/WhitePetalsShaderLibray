@@ -1,9 +1,11 @@
 # 白菊的Shader 库
 
 ## 版本计划
-1、brdf、bsrdf、bsssdf 添加 forward add pass
-2、毛发 shader
-3、brdf、bsrdf、bssdf 添加 烘焙光 支持
+1、毛发 shader 
+
+2、brdf、bsrdf、bssdf 添加 烘焙光 支持
+
+3、用于远景等低层次物体的兰伯特简易Shader
 
 ## PBR_BRDF_LUT
 
