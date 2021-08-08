@@ -102,7 +102,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Exponents_SpecStrengths: {r: 0.195, g: 0.202, b: 1, a: 1}
     - _KdKsExpoure: {r: 0.3183099, g: 0.25, b: 0, a: 1}
-    - _KdKsExpoureSmoothness: {r: 0.3183099, g: 5.85, b: 0, a: 0.42}
+    - _KdKsExpoureSmoothness: {r: 0.3183099, g: 0.25, b: 0.23, a: 0.8}
     - _NormalScale_FurLength: {r: 1, g: 0.09, b: 0, a: 0}
     - _NormalScale_FurLength1_FurLength2: {r: 1, g: 0, b: 3.07, a: 0}
     - _NormalScale_FurOffset_FurLength: {r: 1, g: 0.13, b: 4.68, a: 0}
