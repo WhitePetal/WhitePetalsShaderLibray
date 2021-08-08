@@ -84,7 +84,7 @@
                 o.uv.zw = TRANSFORM_TEX(v.uv, _DetilTex); // detil map
                 o.normal_world = UnityObjectToWorldNormal(v.normal);
                 o.tangent_world = UnityObjectToWorldDir(v.tangent);
-                o.binormal_world = cross(o.normal_world, o.tangent_world) * v.tangent.w;
+                o.binormal_world = cross(o.normal_world, o.tangent_world) * v.tangent.w * unity_WorldTransformParams.w;
                 o.pos_world = mul(unity_ObjectToWorld, v.vertex).xyz;
                 o.view_tangent = GetTangentSpaceViewDir(v.tangent, v.normal, v.vertex);
                 o.point_light_params.xyz = _PointLightPos - v.vertex.xyz;
@@ -119,7 +119,7 @@
 
                 half3 f = _Fresnel + (1.0 - _Fresnel) * tex2D(_LUT, half2(ndotl, 1)).r;
                 half g = 1.0 / tex2D(_LUT, half2(ndoth, ldoth)).g - 1.0;
-                g = saturate(min(ndotv * g, ndotl * g));
+                g = min(1.0, (min(ndotv * g, ndotl * g)));
                 half d = 1.0 / tex2D(_LUT, half2(roughness, ndoth)).b - 1.0;
                 
                 half3 albedo = lerp(_DiffuseColor * tex2D(_Albedo, i.uv.xy).rgb, _DetilColor * tex2D(_DetilTex, i.uv.zw).rgb, detilMask) * _KdKsExpoureParalxScale.x;
@@ -132,7 +132,7 @@
                 f = _Fresnel + (1.0 - _Fresnel) * tex2D(_LUT, half2(ndotv, 1)).r;
                 fixed3 ambient = _AmbientColor * texCUBE(_AmbientTex, reflect(v, n)).rgb;
                 fixed3 amibientCol = (albedo * (1.0 - f) + saturate(specular * f * 0.25 / (ndotv * roughness * roughness))) * ambient;
-                amibientCol += albedo * (i.vertexLight + saturate(ShadeSH9(float4(i.normal_world, 1.0))));
+                amibientCol += albedo * (i.vertexLight + saturate(ShadeSH9(float4(n, 1.0))));
                 fixed4 col = fixed4((brdfCol + amibientCol) * ao, 1.0);
                 return col;
             }

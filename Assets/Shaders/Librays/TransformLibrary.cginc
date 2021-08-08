@@ -17,6 +17,9 @@ half2 GetParallxOffset(half height, half3 view_tangent, half ParallxScale)
 
 half3 GetNormalWorldFromMap(v2f i, half4 normalMap, half normalScale)
 {
+    i.tangent_world = normalize(i.tangent_world);
+    i.normal_world = normalize(i.normal_world);
+    i.binormal_world = normalize(i.binormal_world);
     half3 normal_tangent = UnpackScaleNormal(normalMap, normalScale);
     half3 n = normalize(
         normal_tangent.x * i.tangent_world +
@@ -28,6 +31,9 @@ half3 GetNormalWorldFromMap(v2f i, half4 normalMap, half normalScale)
 
 half3 GetBlendNormalWorldFromMap(v2f i, half4 mainNormalMap, half4 detilNormalMap, half mainNormalScale, half detilNormalScale, fixed mask)
 {
+    i.tangent_world = normalize(i.tangent_world);
+    i.normal_world = normalize(i.normal_world);
+    i.binormal_world = normalize(i.binormal_world);
     half3 mainNor = UnpackScaleNormal(mainNormalMap, mainNormalScale);
     half3 detilNor = UnpackScaleNormal(detilNormalMap, detilNormalScale);
     half3 normal_tangent = lerp(mainNor, BlendNormals(mainNor, detilNor), mask);

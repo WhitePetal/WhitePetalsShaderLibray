@@ -13,7 +13,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 9c20bf5404679924e8e935b597418201, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -72,7 +72,7 @@ Material:
         m_Scale: {x: 20, y: 20}
         m_Offset: {x: 0, y: 0}
     - _ShiftTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: c5ad320e002453344995f7b3b3fee289, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -100,12 +100,13 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Exponents_SpecStrengths: {r: 0.02, g: 0.02, b: 7.14, a: 7.94}
+    - _Exponents_SpecStrengths: {r: 0.195, g: 0.202, b: 1, a: 1}
     - _KdKsExpoure: {r: 0.3183099, g: 0.25, b: 0, a: 1}
     - _NormalScale_FurLength: {r: 1, g: 0.09, b: 0, a: 0}
     - _NormalScale_FurLength1_FurLength2: {r: 1, g: 0, b: 3.07, a: 0}
-    - _NormalScale_FurOffset_FurLength: {r: 1, g: 0.1, b: 3.69, a: 0}
+    - _NormalScale_FurOffset_FurLength: {r: 1, g: 0.13, b: 4.68, a: 0}
     - _NormalScale_LayerStrength: {r: 1, g: 0.15, b: 1, a: 1}
-    - _Shifts_SpecularWidths: {r: 7.8, g: 3.56, b: -0.5, a: -0.5}
+    - _Shifts_SpecularWidths: {r: 3.3, g: 4.5, b: -0.447, a: -0.5}
     - _SpecColor1: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecColor2: {r: 1, g: 0.9109323, b: 0.495283, a: 1}
+    - _SpecColor2: {r: 1, g: 0.8460947, b: 0.13679248, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}

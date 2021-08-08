@@ -136,6 +136,7 @@
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Toon_ShadingGradeMap_Mobile_TransClipping_StencilMask.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Toon_DoubleShadeWithFeather_TransClipping.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\ToonColor_ShadingGradeMap_Transparent_Tess.shader" />
+    <None Include="Assets\Shaders\Librays\FurLibrary.cginc" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\ToonColor_ShadingGradeMap_AngelRing_TransClipping.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\ToonColor_ShadingGradeMap_AngelRing.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\Toon_ShadingGradeMap_AngelRing_Tess_Light_StencilOut.shader" />
@@ -198,6 +199,7 @@
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\ToonColor_ShadingGradeMap.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\ToonColor_ShadingGradeMap_TransClipping_Tess_StencilMask.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Toon_ShadingGradeMap_Mobile_StencilOut.shader" />
+    <None Include="Assets\Shaders\Lambert.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\Toon_ShadingGradeMap_Tess_Light_StencilMask.shader" />
     <Reference Include="UnityEngine">
       <HintPath>D:/UnityHub/2019.4.25f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

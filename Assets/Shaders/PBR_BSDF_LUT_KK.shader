@@ -110,13 +110,14 @@
                 fixed detilMask = detil.a;
                 half3 n = GetBlendNormalWorldFromMap(i, tex2D(_NormalTex, i.uv.xy), tex2D(_DetilNormalTex, i.uv.zw), _NormalScales.x, _NormalScales.y, detilMask);
                 half3 shiftN = tex2D(_ShiftTex, i.uv.xy).r * n;
-                half3 t1 = normalize(-i.binormal_world + _Shifts_SpecularWidths.x * shiftN);
-                half3 t2 = normalize(-i.binormal_world + _Shifts_SpecularWidths.y * shiftN);
+                half3 binormal = -i.binormal_world;
+                half3 t1 = normalize(binormal + _Shifts_SpecularWidths.x * shiftN);
+                half3 t2 = normalize(binormal + _Shifts_SpecularWidths.y * shiftN);
                 half3 v = normalize(UnityWorldSpaceViewDir(i.pos_world));
                 half3 l = normalize(UnityWorldSpaceLightDir(i.pos_world));
                 half3 h = normalize(l + v);
-                fixed ndotl = saturate(DotClamped(l, n) + _KdKsExpoureParalxScale.z);
-                fixed ndotv = clamp(dot(v, n), 0.001, 1.0);
+                fixed2 ndotl = saturate(fixed2(DotClamped(l, n), DotClamped(l, binormal)) + _KdKsExpoureParalxScale.zz);
+                fixed ndotv = clamp(dot(v, binormal), 0.001, 1.0);
                 fixed ndoth = DotClamped(h, n);
                 fixed ldoth = DotClamped(l, h);
                 fixed t1doth = dot(t1, h);
@@ -128,12 +129,12 @@
                 half oneMinusRoughness = 1.0 - roughness;
                 half ao = saturate(1.0 - (1.0 - MRA.b) * _MetallicRoughnessAO.z);
 
-                half3 f = _Fresnel + (1.0 - _Fresnel) * tex2D(_LUT, half2(ndotl, 1)).r;
+                half3 f = _Fresnel + (1.0 - _Fresnel) * tex2D(_LUT, half2(ndotl.y, 1)).r;
                 half g = 1.0 / tex2D(_LUT, half2(ndoth, ldoth)).g - 1.0;
-                g = saturate(min(ndotv * g, ndotl * g));
+                g = min(1.0, (min(ndotv * g, ndotl.x * g)));
                 half d = 1.0 / tex2D(_LUT, half2(roughness, ndoth)).b + 1.0;
-                half dirAtten1 = smoothstep(_Shifts_SpecularWidths.z, 0, t1doth);
-                half dirAtten2 = smoothstep(_Shifts_SpecularWidths.w, 0, t2doth);
+                half dirAtten1 = smoothstep(_Shifts_SpecularWidths.z, 0.0, t1doth);
+                half dirAtten2 = smoothstep(_Shifts_SpecularWidths.w, 0.0, t2doth);
 
                 half3 d1 = tex2D(_LUT, half2(t1doth * t1doth, _Exponents_SpecStrengths.x)).a * dirAtten1 * _SpecColor1 * _Exponents_SpecStrengths.z;
                 half3 d2 = tex2D(_LUT, half2(t2doth * t2doth, _Exponents_SpecStrengths.y)).a * dirAtten2 * _SpecColor2 * _Exponents_SpecStrengths.w;
@@ -143,13 +144,13 @@
                 half3 specular = _SpecularColor * _KdKsExpoureParalxScale.y;
 
                 UNITY_LIGHT_ATTENUATION(atten, i, i.pos_world);
-                fixed3 brdfCol = ((1 - f) * oneMinusMetallic * albedo * ndotl + specular * f * g * d * df / ndotv) * _LightColor0.rgb * atten;
+                fixed3 brdfCol = ((1 - f) * oneMinusMetallic * albedo * ndotl.x + specular * f * g * d * df / ndotv) * _LightColor0.rgb * atten;
                 brdfCol += _PointLightColor * i.point_light_params.w * saturate(dot(normalize(i.point_light_params.xyz), n)) * albedo;
 
                 f = _Fresnel + (1.0 - _Fresnel) * tex2D(_LUT, half2(ndotv, 1)).r;
                 fixed3 ambient = _AmbientColor * texCUBE(_AmbientTex, reflect(v, n)).rgb;
                 fixed3 amibientCol = (albedo * (1.0 - f) + saturate(specular * f * df * 0.25 / (ndotv * roughness * roughness))) * ambient;
-                amibientCol += albedo * (i.vertexLight + saturate(ShadeSH9(float4(i.normal_world, 1.0))));
+                amibientCol += albedo * (i.vertexLight + saturate(ShadeSH9(float4(n, 1.0))));
 
                 fixed4 col = fixed4((brdfCol + amibientCol) * ao, 1.0);
                 return col;
