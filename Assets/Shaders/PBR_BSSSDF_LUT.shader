@@ -133,7 +133,7 @@
                 brdfCol += _PointLightColor * i.point_light_params.w * tex2D(_LUT_SSS, half2(saturate(dot(normalize(i.point_light_params.xyz), n)), r)) * albedo;
 
                 f = _Fresnel + (1.0 - _Fresnel) * tex2D(_LUT, half2(ndotv, 1)).r;
-                fixed3 ambient = _AmbientColor + texCUBE(_AmbientTex, reflect(-v, n)).rgb * _AmbientTexColor;
+                fixed3 ambient = _AmbientColor * texCUBE(_AmbientTex, reflect(-v, n)).rgb * _AmbientTexColor;
                 fixed3 amibientCol = (albedo * (1.0 - f) + saturate(specular * f * 0.25 / (ndotv * roughness * roughness))) * ambient * saturate(atten + 0.62);
                 amibientCol += albedo * (i.vertexLight + saturate(ShadeSH9(float4(i.normal_world, 1.0))));
                 

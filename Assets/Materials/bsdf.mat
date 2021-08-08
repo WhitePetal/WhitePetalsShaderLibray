@@ -20,8 +20,9 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: -6805456588254430575, guid: a95c9c258d72f50438a433c7764987cb,
+          type: 3}
+        m_Scale: {x: 8, y: 8}
         m_Offset: {x: 0, y: 0}
     - _AmbientTex:
         m_Texture: {fileID: 8900000, guid: 1153dc89e66880c4eb7adc16ba588855, type: 3}
@@ -64,7 +65,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MRATex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 7248847905325131031, guid: a95c9c258d72f50438a433c7764987cb,
+          type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -80,7 +82,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1d1a5ab41f8fbb249a2e891217b49d9d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -92,11 +94,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallxTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: ae8cbd696abbddb48ac4f8846929b33e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShiftTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: -6805456588254430575, guid: a95c9c258d72f50438a433c7764987cb,
+          type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Tex:
@@ -128,15 +131,15 @@ Material:
     - _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Exponents: {r: 0.511, g: 0.288, b: 1, a: 1}
-    - _Exponents_SpecStrengths: {r: 0.896, g: 1, b: 6.13, a: 6.51}
+    - _Exponents_SpecStrengths: {r: 0.848, g: 0.181, b: 0.47, a: 1}
     - _Fresnel: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 1}
-    - _KdKsExpoureParalxScale: {r: 0.32, g: 2.62, b: 0.203, a: 0.05}
-    - _MetallicRoughnessAO: {r: 0, g: 0.65, b: 1, a: 1}
+    - _KdKsExpoureParalxScale: {r: 0.32, g: 0.25, b: 0.143, a: 0.0079}
+    - _MetallicRoughnessAO: {r: 0, g: 0.802, b: 0.766, a: 1}
     - _NormalScales: {r: 1, g: 1, b: 0, a: 0}
     - _PointLightColor: {r: 0.5492168, g: 0.6934489, b: 0.9622641, a: 1}
     - _PointLightPos: {r: -0.8138552, g: 0.09684777, b: 0.58672065, a: 1}
-    - _Shifts_SpecularWidths: {r: 0.6, g: 0.3, b: -0.496, a: -0.214}
-    - _SpecColor1: {r: 1, g: 0, b: 0, a: 1}
-    - _SpecColor2: {r: 0.1448469, g: 0.23472884, b: 0.8773585, a: 1}
+    - _Shifts_SpecularWidths: {r: 1.8, g: 4.8, b: -0.594, a: -0.581}
+    - _SpecColor1: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecColor2: {r: 0.9682763, g: 1, b: 0.48584908, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _TuneNormalBlur: {r: 0.8490566, g: 0.55991757, b: 0.41251338, a: 1}

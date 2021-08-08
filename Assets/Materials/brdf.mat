@@ -20,8 +20,9 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: -6805456588254430575, guid: a95c9c258d72f50438a433c7764987cb,
+          type: 3}
+        m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _AmbientTex:
         m_Texture: {fileID: 8900000, guid: 3b5d67736d7b8ad4f8da4d58eaef0b98, type: 3}
@@ -60,7 +61,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MRATex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 7248847905325131031, guid: a95c9c258d72f50438a433c7764987cb,
+          type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -72,7 +74,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1d1a5ab41f8fbb249a2e891217b49d9d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -84,7 +86,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallxTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: ae8cbd696abbddb48ac4f8846929b33e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -111,9 +113,9 @@ Material:
     - _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Fresnel: {r: 0.04, g: 0.04, b: 0.04, a: 1}
-    - _KdKsExpoureParalxScale: {r: 0.3183099, g: 0.25, b: 0.152, a: 0.04}
-    - _MetallicRoughnessAO: {r: 0, g: 0.8, b: 1, a: 1}
-    - _NormalScales: {r: 0, g: 0, b: 0, a: 0}
+    - _KdKsExpoureParalxScale: {r: 0.3183099, g: 0.25, b: 0.232, a: 0.0133}
+    - _MetallicRoughnessAO: {r: 0, g: 0.8, b: 0.706, a: 1}
+    - _NormalScales: {r: 1, g: 1, b: 0, a: 0}
     - _PointLightColor: {r: 0.1527234, g: 0.8301887, b: 0.15782455, a: 1}
     - _PointLightPos: {r: -1.0352612, g: 0.10044716, b: 0.7410023, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}

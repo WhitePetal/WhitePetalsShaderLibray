@@ -76,7 +76,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _AO: 0.72
+    - _AO: 1
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -104,7 +104,7 @@ Material:
     - _KdKsExpoure: {r: 0.3183099, g: 0.25, b: 0, a: 1}
     - _NormalScale_FurLength: {r: 1, g: 0.09, b: 0, a: 0}
     - _NormalScale_FurLength1_FurLength2: {r: 1, g: 0, b: 3.07, a: 0}
-    - _NormalScale_FurOffset_FurLength: {r: 1, g: 0.15, b: 5, a: 0}
+    - _NormalScale_FurOffset_FurLength: {r: 1, g: 0.1, b: 3.69, a: 0}
     - _NormalScale_LayerStrength: {r: 1, g: 0.15, b: 1, a: 1}
     - _Shifts_SpecularWidths: {r: 7.8, g: 3.56, b: -0.5, a: -0.5}
     - _SpecColor1: {r: 1, g: 1, b: 1, a: 1}

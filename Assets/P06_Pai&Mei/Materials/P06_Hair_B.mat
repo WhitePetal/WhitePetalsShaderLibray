@@ -285,7 +285,7 @@ Material:
     - _PointLightColor: {r: 0.5492168, g: 0.6934489, b: 0.9622641, a: 1}
     - _PointLightPos: {r: 1.0000001, g: 1.1740121, b: 0.0000000036670826, a: 1}
     - _RimLightColor: {r: 0.13843897, g: 0.14397381, b: 0.16037738, a: 1}
-    - _Shifts_SpecularWidths: {r: 1.5, g: 2.7, b: -0.235, a: -0.18}
+    - _Shifts_SpecularWidths: {r: 2.8, g: 4.2, b: -0.235, a: -0.18}
     - _SpecColor1: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
     - _SpecColor2: {r: 0.51690996, g: 0.8431826, b: 0.9056604, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
