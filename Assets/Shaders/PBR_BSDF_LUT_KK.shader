@@ -20,7 +20,7 @@
         _AmbientColor("Ambient Color", Color) = (1.0, 1.0, 1.0, 1.0)
         _ShiftTex("ShiftTex", 2D) = "white" {}
         [VectorRange(0, 10.0, 1, 10.0, 0, 10.0, 1, 10.0, 0, 1.0, 0, 0.001, 0, 1.0, 0, 0.001)] _Shifts_SpecularWidths("Shift1_Shift2_SpecularWidth1_SpecularWidth2", Vector) = (0.1, 0.1, -0.5, -0.5)
-        [VectorRange(0, 1, 0, 1, 0, 8, 0, 8)]_Exponents_SpecStrengths("Exponent1_Exponent2_SpecStrength1_SpecStrength2", Vector) = (0.3, 0.3, 1.0, 1.0)
+        [VectorRange(0.01, 1, 0.01, 1, 0, 8, 0, 8)]_Exponents_SpecStrengths("Exponent1_Exponent2_SpecStrength1_SpecStrength2", Vector) = (0.3, 0.3, 1.0, 1.0)
         _SpecColor1("SpecColor1", Color) = (1.0, 1.0, 1.0, 1.0)
         _SpecColor2("SpecColor2", Color) = (1.0, 1.0, 1.0, 1.0)
         _PointLightColor("Point Light Color", Color) = (0.5492168, 0.6934489, 0.9622642, 1.0)
@@ -116,7 +116,7 @@
                 half3 l = normalize(UnityWorldSpaceLightDir(i.pos_world));
                 half3 h = normalize(l + v);
                 fixed ndotl = saturate(DotClamped(l, n) + _KdKsExpoureParalxScale.z);
-                fixed ndotv = max(0.001, dot(v, n));
+                fixed ndotv = clamp(dot(v, n), 0.001, 1.0);
                 fixed ndoth = DotClamped(h, n);
                 fixed ldoth = DotClamped(l, h);
                 fixed t1doth = dot(t1, h);
@@ -137,17 +137,18 @@
 
                 half3 d1 = tex2D(_LUT, half2(t1doth * t1doth, _Exponents_SpecStrengths.x)).a * dirAtten1 * _SpecColor1 * _Exponents_SpecStrengths.z;
                 half3 d2 = tex2D(_LUT, half2(t2doth * t2doth, _Exponents_SpecStrengths.y)).a * dirAtten2 * _SpecColor2 * _Exponents_SpecStrengths.w;
+                half3 df = d1 + d2;
                 
                 half3 albedo = lerp(_DiffuseColor * tex2D(_Albedo, i.uv.xy).rgb, _DetilColor * tex2D(_DetilTex, i.uv.zw).rgb, detilMask) * _KdKsExpoureParalxScale.x;
                 half3 specular = _SpecularColor * _KdKsExpoureParalxScale.y;
 
                 UNITY_LIGHT_ATTENUATION(atten, i, i.pos_world);
-                fixed3 brdfCol = ((1 - f) * oneMinusMetallic * albedo * ndotl + specular * f * g * d * (d1 + d2) / ndotv) * _LightColor0.rgb * atten;
+                fixed3 brdfCol = ((1 - f) * oneMinusMetallic * albedo * ndotl + specular * f * g * d * df / ndotv) * _LightColor0.rgb * atten;
                 brdfCol += _PointLightColor * i.point_light_params.w * saturate(dot(normalize(i.point_light_params.xyz), n)) * albedo;
 
                 f = _Fresnel + (1.0 - _Fresnel) * tex2D(_LUT, half2(ndotv, 1)).r;
                 fixed3 ambient = _AmbientColor * texCUBE(_AmbientTex, reflect(v, n)).rgb;
-                fixed3 amibientCol = (albedo * (1.0 - f) + saturate(specular * f * (d1 + d2) * 0.25 / (ndotv * roughness * roughness))) * ambient;
+                fixed3 amibientCol = (albedo * (1.0 - f) + saturate(specular * f * df * 0.25 / (ndotv * roughness * roughness))) * ambient;
                 amibientCol += albedo * (i.vertexLight + saturate(ShadeSH9(float4(i.normal_world, 1.0))));
 
                 fixed4 col = fixed4((brdfCol + amibientCol) * ao, 1.0);
