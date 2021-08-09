@@ -126,10 +126,11 @@
                 half d = 1.0 / tex2D(_LUT, half2(roughness, ndoth)).b - 1.0;
                 
                 half3 albedo = lerp(_DiffuseColor * tex2D(_Albedo, i.uv.xy).rgb, _DetilColor * tex2D(_DetilTex, i.uv.zw).rgb, detilMask) * _KdKsExpoureParalxScale.x;
-                half3 specular = _SpecularColor * _KdKsExpoureParalxScale.y;
+                half3 specular = lerp(_SpecularColor * _KdKsExpoureParalxScale.y, albedo, 1.0 - oneMinusMetallic);
+                albedo *= oneMinusMetallic;
 
                 UNITY_LIGHT_ATTENUATION(atten, i, i.pos_world);
-                fixed3 brdfCol = ((1 - f) * oneMinusMetallic * albedo * ndotl + specular * f * g * d / ndotv) * _LightColor0.rgb * atten;
+                fixed3 brdfCol = ((1 - f) * albedo * ndotl + specular * f * g * d / ndotv) * _LightColor0.rgb * atten;
                 brdfCol += _PointLightColor * i.point_light_params.w * tex2D(_LUT_SSS, half2(saturate(dot(normalize(i.point_light_params.xyz), n)), r)) * albedo;
 
                 f = _Fresnel + (1.0 - _Fresnel) * tex2D(_LUT, half2(ndotv, 1)).r;
@@ -237,10 +238,11 @@
                 half d = 1.0 / tex2D(_LUT, half2(roughness, ndoth)).b - 1.0;
                 
                 half3 albedo = lerp(_DiffuseColor * tex2D(_Albedo, i.uv.xy).rgb, _DetilColor * tex2D(_DetilTex, i.uv.zw).rgb, detilMask) * _KdKsExpoureParalxScale.x;
-                half3 specular = _SpecularColor * _KdKsExpoureParalxScale.y;
+                half3 specular = lerp(_SpecularColor * _KdKsExpoureParalxScale.y, albedo, 1.0 - oneMinusMetallic);
+                albedo *= oneMinusMetallic;
 
                 UNITY_LIGHT_ATTENUATION(atten, i, i.pos_world);
-                fixed3 brdfCol = ((1 - f) * oneMinusMetallic * albedo * ndotl + specular * f * g * d / ndotv) * _LightColor0.rgb * atten;
+                fixed3 brdfCol = ((1 - f) * albedo * ndotl + specular * f * g * d / ndotv) * _LightColor0.rgb * atten;
                 // fwdadd 不需要计算间接光
 
                 fixed4 col = fixed4(brdfCol * ao, 1.0);

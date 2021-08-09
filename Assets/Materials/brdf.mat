@@ -61,8 +61,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MRATex:
-        m_Texture: {fileID: 7248847905325131031, guid: a95c9c258d72f50438a433c7764987cb,
-          type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -107,15 +106,15 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientColor: {r: 0.36792448, g: 0.36792448, b: 0.36792448, a: 1}
+    - _AmbientColor: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DetilColor: {r: 1, g: 1, b: 1, a: 1}
     - _DiffuseColor: {r: 0, g: 1, b: 0.99487066, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Fresnel: {r: 0.04, g: 0.04, b: 0.04, a: 1}
-    - _KdKsExpoureParalxScale: {r: 0.3183099, g: 0.25, b: 0.232, a: 0.0133}
-    - _MetallicRoughnessAO: {r: 0, g: 0.8, b: 0.706, a: 1}
-    - _NormalScales: {r: 1, g: 1, b: 0, a: 0}
-    - _PointLightColor: {r: 0.1527234, g: 0.8301887, b: 0.15782455, a: 1}
+    - _Fresnel: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
+    - _KdKsExpoureParalxScale: {r: 0.3183099, g: 0.25, b: 0.117, a: 0.0133}
+    - _MetallicRoughnessAO: {r: 1, g: 0.095, b: 0.461, a: 1}
+    - _NormalScales: {r: 1, g: 1.03, b: 0, a: 0}
+    - _PointLightColor: {r: 0, g: 0, b: 0, a: 1}
     - _PointLightPos: {r: -1.0352612, g: 0.10044716, b: 0.7410023, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}

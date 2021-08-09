@@ -135,21 +135,22 @@
                 half d = 1.0 / tex2D(_LUT, half2(roughness, ndoth)).b + 1.0;
                 half dirAtten1 = smoothstep(_Shifts_SpecularWidths.z, 0.0, t1doth);
                 half dirAtten2 = smoothstep(_Shifts_SpecularWidths.w, 0.0, t2doth);
+                
+                half3 albedo = lerp(_DiffuseColor * tex2D(_Albedo, i.uv.xy).rgb, _DetilColor * tex2D(_DetilTex, i.uv.zw).rgb, detilMask) * _KdKsExpoureParalxScale.x;
+                half3 specular = lerp(_SpecularColor * _KdKsExpoureParalxScale.y, albedo, 1.0 - oneMinusMetallic);
+                albedo *= oneMinusMetallic;
 
                 half3 d1 = tex2D(_LUT, half2(t1doth * t1doth, _Exponents_SpecStrengths.x)).a * dirAtten1 * _SpecColor1 * _Exponents_SpecStrengths.z;
                 half3 d2 = tex2D(_LUT, half2(t2doth * t2doth, _Exponents_SpecStrengths.y)).a * dirAtten2 * _SpecColor2 * _Exponents_SpecStrengths.w;
                 half3 df = d1 + d2;
-                
-                half3 albedo = lerp(_DiffuseColor * tex2D(_Albedo, i.uv.xy).rgb, _DetilColor * tex2D(_DetilTex, i.uv.zw).rgb, detilMask) * _KdKsExpoureParalxScale.x;
-                half3 specular = _SpecularColor * _KdKsExpoureParalxScale.y;
 
                 UNITY_LIGHT_ATTENUATION(atten, i, i.pos_world);
-                fixed3 brdfCol = ((1 - f) * oneMinusMetallic * albedo * ndotl.x + specular * f * g * d * df / ndotv) * _LightColor0.rgb * atten;
+                fixed3 brdfCol = ((1 - f) * albedo * ndotl.x + specular * f * g * d * df / ndotv) * _LightColor0.rgb * atten;
                 brdfCol += _PointLightColor * i.point_light_params.w * saturate(dot(normalize(i.point_light_params.xyz), n)) * albedo;
 
                 f = _Fresnel + (1.0 - _Fresnel) * tex2D(_LUT, half2(ndotv, 1)).r;
-                fixed3 ambient = _AmbientColor * texCUBE(_AmbientTex, reflect(v, n)).rgb;
-                fixed3 amibientCol = (albedo * (1.0 - f) + saturate(specular * f * df * 0.25 / (ndotv * roughness * roughness))) * ambient;
+                fixed3 ambient = _AmbientColor * texCUBE(_AmbientTex, reflect(-v, n)).rgb;
+                fixed3 amibientCol = (albedo * (1.0 - f) + saturate(specular * f * 0.25 / (ndotv * roughness * roughness))) * ambient;
                 amibientCol += albedo * (i.vertexLight + saturate(ShadeSH9(float4(n, 1.0))));
 
                 fixed4 col = fixed4((brdfCol + amibientCol) * ao, 1.0);
@@ -263,10 +264,11 @@
                 half3 d2 = tex2D(_LUT, half2(t2doth * t2doth, _Exponents_SpecStrengths.y)).a * dirAtten2 * _SpecColor2 * _Exponents_SpecStrengths.w;
                 
                 half3 albedo = lerp(_DiffuseColor * tex2D(_Albedo, i.uv.xy).rgb, _DetilColor * tex2D(_DetilTex, i.uv.zw).rgb, detilMask) * _KdKsExpoureParalxScale.x;
-                half3 specular = _SpecularColor * _KdKsExpoureParalxScale.y;
+                half3 specular = lerp(_SpecularColor * _KdKsExpoureParalxScale.y, albedo, 1.0 - oneMinusMetallic);
+                albedo *= oneMinusMetallic;
 
                 UNITY_LIGHT_ATTENUATION(atten, i, i.pos_world);
-                fixed3 brdfCol = ((1 - f) * oneMinusMetallic * albedo * ndotl + specular * f * g * d * (d1 + d2) / ndotv) * _LightColor0.rgb * atten;
+                fixed3 brdfCol = ((1 - f) * albedo * ndotl + specular * f * g * d * (d1 + d2) / ndotv) * _LightColor0.rgb * atten;
                 // fwdadd 不需要计算间接光
 
                 fixed4 col = fixed4(brdfCol * ao, 1);
