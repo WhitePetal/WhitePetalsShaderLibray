@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CrytekSponza\Scripts\ReplaceMaterials.cs" />
     <Compile Include="Assets\SapphiArt\SapphiArtchan\Scripts\AnimationManagerUI.cs" />
     <Compile Include="Assets\SapphiArt\SapphiArtchan\Scripts\SapphiArtChan_AnimManager.cs" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Toon_DoubleShadeWithFeather_Mobile_TransClipping_StencilMask.shader" />

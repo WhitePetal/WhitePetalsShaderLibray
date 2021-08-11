@@ -25,7 +25,8 @@ Shader "PBR/PBR_BRDF_LUT"
         _PointLightColor("Point Light Color", Color) = (0.5492168, 0.6934489, 0.9622642, 1.0)
         [ObjPositionVector]_PointLightPos("Point Light Pos", Vector) = (1.0, .0, .0, 1.0)
         [NoScaleOffset]_AmbientTex("Ambient Tex", Cube) = "white" {}
-        _AmbientColor("Ambient Color", Color) = (1.0, 1.0, 1.0, 1.0)
+        _AmbientSpecStrength("Ambient Specular Strength", Range(0.0, 1.0)) = 0.5
+        _AmbientColor("Ambient Color", Color) = (0.3, 0.3, 0.3, 1.0)
     }
     SubShader
     {
@@ -87,6 +88,7 @@ Shader "PBR/PBR_BRDF_LUT"
             fixed2 _NormalScales;
             half4 _KdKsExpoureParalxScale;
             half3 _PointLightPos;
+            fixed _AmbientSpecStrength;
 
             v2f vert (appdata v)
             {
@@ -100,7 +102,7 @@ Shader "PBR/PBR_BRDF_LUT"
                 o.pos_world = mul(unity_ObjectToWorld, v.vertex).xyz;
                 o.view_tangent = GetTangentSpaceViewDir(v.tangent, v.normal, v.vertex);
                 o.point_light_params.xyz = _PointLightPos - v.vertex.xyz;
-                o.point_light_params.w = 1.0 / clamp(dot(o.point_light_params.xyz, o.point_light_params.xyz), 0.001, 1.0);
+                o.point_light_params.w = 1.0 / max(dot(o.point_light_params.xyz, o.point_light_params.xyz), 0.001);
                 o.point_light_params.xyz = mul(unity_ObjectToWorld, float4(_PointLightPos, 1.0)) - o.pos_world;
                 #ifndef LIGHTMAP_ON
                 o.vertexLight = Shade4PointLights(unity_4LightPosX0, unity_4LightPosY0, unity_4LightPosZ0, unity_LightColor[0].rgb, unity_LightColor[1].rgb, unity_LightColor[2], unity_LightColor[3], unity_4LightAtten0, o.pos_world, o.normal_world);
@@ -123,7 +125,7 @@ Shader "PBR/PBR_BRDF_LUT"
                 half3 l = normalize(UnityWorldSpaceLightDir(i.pos_world));
                 half3 h = normalize(l + v);
                 fixed ndotl = saturate(DotClamped(l, n) + _KdKsExpoureParalxScale.z);
-                fixed ndotv = max(0.001, dot(v, n));
+                fixed ndotv = max(0.01, dot(v, n));
                 fixed ndoth = DotClamped(h, n);
                 fixed ldoth = DotClamped(l, h);
 
@@ -149,8 +151,9 @@ Shader "PBR/PBR_BRDF_LUT"
                 fixed3 amibientCol;
                 #ifndef LIGHTMAP_ON
                 f = _Fresnel + (1.0 - _Fresnel) * tex2D(_LUT, half2(ndotv, 1)).r;
-                fixed3 ambient = _AmbientColor * texCUBE(_AmbientTex, reflect(-v, n)).rgb;
-                amibientCol = (albedo * (1.0 - f) + saturate(specular * f * 0.25 / (ndotv * roughness * roughness))) * ambient;
+                fixed3 ambientSpec = texCUBE(_AmbientTex, reflect(-v, n)).rgb * _KdKsExpoureParalxScale.y * _AmbientSpecStrength;
+                fixed3 ambientDiff = _AmbientColor;
+                amibientCol = (albedo * ambientDiff * (1.0 - f) + specular * ambientSpec * f * 0.25 / (roughness * roughness));
                 amibientCol += albedo * (i.vertexLight + saturate(ShadeSH9(float4(n, 1.0))));
                 #else
                 amibientCol = DecodeLightmap(UNITY_SAMPLE_TEX2D(unity_Lightmap, i.lightMapUV));

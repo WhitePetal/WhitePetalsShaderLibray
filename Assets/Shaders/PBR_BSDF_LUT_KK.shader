@@ -17,7 +17,8 @@
         [NoScaleOffset]_DetilNormalTex("Detil Normal Map", 2D) = "bump" {}
         [VectorRange(0.0, 2.0, 0.0, 2.0)]_NormalScales("MainNormalScale_DetilNormalScale", Vector) = (1.0, 1.0, 0.0, 0.0)
         [NoScaleOffset]_AmbientTex("Ambient Tex", Cube) = "white" {}
-        _AmbientColor("Ambient Color", Color) = (1.0, 1.0, 1.0, 1.0)
+        _AmbientColor("Ambient Color", Color) = (0.3, 0.3, 0.3, 1.0)
+        _AmbientSpecStrength("Ambient Specular Strength", Range(0, 1.0)) = 0.5
         _ShiftTex("ShiftTex", 2D) = "white" {}
         [VectorRange(0, 10.0, 1, 10.0, 0, 10.0, 1, 10.0, 0, 1.0, 0, 0.001, 0, 1.0, 0, 0.001)] _Shifts_SpecularWidths("Shift1_Shift2_SpecularWidth1_SpecularWidth2", Vector) = (0.1, 0.1, -0.5, -0.5)
         [VectorRange(0.01, 1, 0.01, 1, 0, 8, 0, 8)]_Exponents_SpecStrengths("Exponent1_Exponent2_SpecStrength1_SpecStrength2", Vector) = (0.3, 0.3, 1.0, 1.0)
@@ -82,6 +83,7 @@
             half4 _Shifts_SpecularWidths;
             half4 _Exponents_SpecStrengths;
             half3 _PointLightPos;
+            fixed _AmbientSpecStrength;
 
             v2f vert (appdata v)
             {
@@ -95,7 +97,7 @@
                 o.pos_world = mul(unity_ObjectToWorld, v.vertex).xyz;
                 o.view_tangent = GetTangentSpaceViewDir(v.tangent, v.normal, v.vertex);
                 o.point_light_params.xyz = _PointLightPos - v.vertex.xyz;
-                o.point_light_params.w = 1.0 / clamp(dot(o.point_light_params.xyz, o.point_light_params.xyz), 0.001, 1.0);
+                o.point_light_params.w = 1.0 / max(dot(o.point_light_params.xyz, o.point_light_params.xyz), 0.001);
                 o.point_light_params.xyz = mul(unity_ObjectToWorld, float4(_PointLightPos, 1.0)) - o.pos_world;
                 o.vertexLight = Shade4PointLights(unity_4LightPosX0, unity_4LightPosY0, unity_4LightPosZ0, unity_LightColor[0].rgb, unity_LightColor[1].rgb, unity_LightColor[2], unity_LightColor[3], unity_4LightAtten0, o.pos_world, o.normal_world);
                 TRANSFER_SHADOW(o);
@@ -148,9 +150,11 @@
                 fixed3 brdfCol = ((1 - f) * albedo * ndotl.x + specular * f * g * d * df / ndotv) * _LightColor0.rgb * atten;
                 brdfCol += _PointLightColor * i.point_light_params.w * saturate(dot(normalize(i.point_light_params.xyz), n)) * albedo;
 
+                fixed3 amibientCol;
                 f = _Fresnel + (1.0 - _Fresnel) * tex2D(_LUT, half2(ndotv, 1)).r;
-                fixed3 ambient = _AmbientColor * texCUBE(_AmbientTex, reflect(-v, n)).rgb;
-                fixed3 amibientCol = (albedo * (1.0 - f) + saturate(specular * f * 0.25 / (ndotv * roughness * roughness))) * ambient;
+                fixed3 ambientSpec = texCUBE(_AmbientTex, reflect(-v, n)).rgb * _KdKsExpoureParalxScale.y * _AmbientSpecStrength;
+                fixed3 ambientDiff = _AmbientColor;
+                amibientCol = (albedo * ambientDiff * (1.0 - f) + specular * ambientSpec * f * 0.25 / (roughness * roughness));
                 amibientCol += albedo * (i.vertexLight + saturate(ShadeSH9(float4(n, 1.0))));
 
                 fixed4 col = fixed4((brdfCol + amibientCol) * ao, 1.0);

@@ -66,6 +66,7 @@ public class BSDF_LUT_KK_Inspector : ShaderGUI
 		GUILayout.Label(new GUIContent("AmbientTex"));
 		EditorGUI.indentLevel += 2;
 		materialEditor.TexturePropertySingleLine(new GUIContent("Ambient"), ambient, ambientColor);
+		materialEditor.ShaderProperty(FindProperty("_AmbientSpecStrength", properties), new GUIContent("Ambient Specular Strength"));
 		EditorGUI.indentLevel -= 2;
 
 		GUILayout.Space(20);

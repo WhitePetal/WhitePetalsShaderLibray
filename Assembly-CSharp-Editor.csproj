@@ -71,6 +71,7 @@
     <Compile Include="Assets\Editor\ShaderInspectors\ObjPositionVectorDrawer.cs" />
     <Compile Include="Assets\Editor\ShaderInspectors\VectorRangeDrawer.cs" />
     <Compile Include="Assets\Editor\Tools\GenerateRenderLUT.cs" />
+    <Compile Include="Assets\Editor\Tools\ReplaceMaterialsEditor.cs" />
     <Compile Include="Assets\P06_Pai&amp;Mei\Toon\Editor\CopyMaterialParameter.cs" />
     <Compile Include="Assets\P06_Pai&amp;Mei\Toon\Editor\RemoveUnusedMaterialProperties.cs" />
     <Compile Include="Assets\P06_Pai&amp;Mei\Toon\Editor\RemoveUnusedShaderKeywordsFromUTS2Material.cs" />

@@ -152,7 +152,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShiftTex:
-        m_Texture: {fileID: 2800000, guid: 6369951fe26a4154398f9af5c51431a1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8039734ea9ad13d4dae326a4b62f7e94, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
