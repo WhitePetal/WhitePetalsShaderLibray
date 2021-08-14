@@ -122,7 +122,7 @@ Material:
     - _Exponents_SpecStrengths: {r: 0.97, g: 0.437, b: 1, a: 1}
     - _Fresnel: {r: 0.04, g: 0.04, b: 0.04, a: 1}
     - _KdKsExpoureParalxScale: {r: 0.3183099, g: 0.25, b: 0, a: 0.04}
-    - _MetallicRoughnessAO: {r: 0, g: 0.25, b: 1, a: 1}
+    - _MetallicRoughnessAO: {r: 0, g: 0.75, b: 1, a: 1}
     - _NormalScales: {r: 1, g: 1, b: 0, a: 0}
     - _PointLightColor: {r: 0.5492168, g: 0.6934489, b: 0.9622641, a: 1}
     - _PointLightPos: {r: 1, g: 0, b: 0, a: 1}
