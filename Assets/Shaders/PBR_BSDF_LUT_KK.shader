@@ -53,7 +53,10 @@
                 float4 vertex : POSITION;
                 half3 normal : NORMAL;
                 half4 tangent : TANGENT;
-                float2 uv : TEXCOORD0;
+                float2 texcoord : TEXCOORD0;
+                #ifdef LIGHTMAP_ON
+                float2 texcoord1 : TEXCOORD1;
+                #endif
             };
 
             struct v2f
@@ -66,7 +69,12 @@
                 float3 pos_world : TEXCOORD4;
                 half3 view_tangent : TEXCOORD5;
                 half4 point_light_params : TEXCOORD6;
+                #ifdef VERTEXLIGHT_ON
                 fixed3 vertexLight : TEXCOORD7;
+                #endif
+                #ifdef LIGHTMAP_ON
+                float2 lightMapUV : TEXCOORD7;
+                #endif
                 SHADOW_COORDS(8)
             };
 
@@ -89,8 +97,8 @@
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv.xy = TRANSFORM_TEX(v.uv, _Albedo); // main map
-                o.uv.zw = TRANSFORM_TEX(v.uv, _DetilTex); // detil map
+                o.uv.xy = TRANSFORM_TEX(v.texcoord, _Albedo); // main map
+                o.uv.zw = TRANSFORM_TEX(v.texcoord, _DetilTex); // detil map
                 o.normal_world = UnityObjectToWorldDir(v.normal);
                 o.tangent_world = UnityObjectToWorldDir(v.tangent);
                 o.binormal_world = cross(o.normal_world, o.tangent_world) * v.tangent.w * unity_WorldTransformParams.w;
@@ -99,7 +107,12 @@
                 o.point_light_params.xyz = _PointLightPos - v.vertex.xyz;
                 o.point_light_params.w = 1.0 / max(dot(o.point_light_params.xyz, o.point_light_params.xyz), 0.001);
                 o.point_light_params.xyz = mul(unity_ObjectToWorld, float4(_PointLightPos, 1.0)) - o.pos_world;
+                #ifdef VERTEXLIGHT_ON
                 o.vertexLight = Shade4PointLights(unity_4LightPosX0, unity_4LightPosY0, unity_4LightPosZ0, unity_LightColor[0].rgb, unity_LightColor[1].rgb, unity_LightColor[2], unity_LightColor[3], unity_4LightAtten0, o.pos_world, o.normal_world);
+                #endif
+                #ifdef LIGHTMAP_ON
+                o.lightMapUV = v.texcoord1.xy * unity_LightmapST.xy + unity_LightmapST.zw;
+                #endif
                 TRANSFER_SHADOW(o);
                 return o;
             }
@@ -151,11 +164,25 @@
                 brdfCol += _PointLightColor * i.point_light_params.w * saturate(dot(normalize(i.point_light_params.xyz), n)) * albedo;
 
                 fixed3 amibientCol;
+                fixed3 ambientDiff;
+                fixed3 ambientSpec = texCUBE(_AmbientTex, reflect(-v, n) + i.pos_world).rgb * _KdKsExpoureParalxScale.y * _AmbientSpecStrength;
                 f = _Fresnel + (1.0 - _Fresnel) * tex2D(_LUT, half2(ndotv, 1)).r;
-                fixed3 ambientSpec = texCUBE(_AmbientTex, reflect(-v, n)).rgb * _KdKsExpoureParalxScale.y * _AmbientSpecStrength;
-                fixed3 ambientDiff = _AmbientColor;
-                amibientCol = (albedo * ambientDiff * (1.0 - f) + specular * ambientSpec * f * 0.25 / (roughness * roughness));
-                amibientCol += albedo * (i.vertexLight + saturate(ShadeSH9(float4(n, 1.0))));
+                #ifndef LIGHTMAP_ON
+                ambientDiff = _AmbientColor;
+                    #ifdef VERTEXLIGHT_ON
+                    ambientDiff += (i.vertexLight + saturate(ShadeSH9(float4(n, 1.0))));
+                    #else
+                    ambientDiff += (saturate(ShadeSH9(float4(n, 1.0))));
+                    #endif
+                #endif
+                #ifdef LIGHTMAP_ON
+                ambientDiff = DecodeLightmap(UNITY_SAMPLE_TEX2D(unity_Lightmap, i.lightMapUV));
+                    #ifdef DIRLIGHTMAP_COMBINED
+                    float4 lightmapDirection = UNITY_SAMPLE_TEX2D_SAMPLER(unity_LightmapInd, unity_Lightmap, i.lightMapUV);
+                    ambientDiff = DecodeDirectionalLightmap(ambientDiff, lightmapDirection, n);
+                    #endif
+                #endif
+                amibientCol = (albedo * ambientDiff + specular * ambientSpec * f * 0.25 / (roughness * roughness));
 
                 fixed4 col = fixed4((brdfCol + amibientCol) * ao, 1.0);
                 return col;
@@ -315,6 +342,78 @@
                 // 前向渲染 自动写入深度信息
                 return fixed4(0, 0, 0, 0);
             }
+            ENDCG
+        }
+
+        Pass
+        {
+            Tags{"LightMode"="Meta"}
+            Cull Off
+            CGPROGRAM
+            #pragma vertex vert_meta
+            #pragma fragment frag_meta
+            #include "UnityCG.cginc"
+            #include "UnityMetaPass.cginc"
+
+            struct appdata
+            {
+                float4 vertex : POSITION;
+                half3 normal : NORMAL;
+                half4 tangent : TANGENT;
+                float2 texcoord : TEXCOORD0;
+                float2 texcoord1 : TEXCOORD1;
+            };
+
+            struct v2f
+            {
+                float4 uv : TEXCOORD0;
+                float4 vertex : SV_POSITION;
+                // half3 normal_world : TEXCOORD1;
+                // half3 tangent_world : TEXCOORD2;
+                // half3 binormal_world : TEXCOORD3;
+                // float3 pos_world : TEXCOORD4;
+            };
+
+            // #include "../Shaders/Librays/TransformLibrary.cginc"
+
+            sampler2D _Albedo, _NormalTex, _DetilTex, _DetilNormalTex, _MRATex;
+            float4 _Albedo_ST, _DetilTex_ST;
+            samplerCUBE _AmbientTex;
+
+            fixed3 _DiffuseColor, _DetilColor, _Fresnel, _AmbientColor, _SpecularColor, _PointLightColor;
+            fixed3 _MetallicRoughnessAO;
+            fixed2 _NormalScales;
+            half4 _KdKsExpoureParalxScale;
+
+            v2f vert_meta(appdata v)
+            {
+                v2f o;
+                v.vertex.xy = v.texcoord1 * unity_LightmapST.xy + unity_LightmapST.zw;
+                v.vertex.z = v.vertex.z > 0 ? 0.0001 : 0;
+                o.vertex = UnityObjectToClipPos(v.vertex);
+                o.uv.xy = TRANSFORM_TEX(v.texcoord, _Albedo); // main map
+                o.uv.zw = TRANSFORM_TEX(v.texcoord, _DetilTex); // detil map
+                return o;
+            }
+
+            fixed4 frag_meta(v2f i) : SV_TARGET0
+            {
+                UnityMetaInput IN;
+                half3 MRA = tex2D(_MRATex, i.uv.xy).rgb;
+                half roughness = _MetallicRoughnessAO.y * MRA.g;
+                half oneMinusMetallic = 1.0 - MRA.r * _MetallicRoughnessAO.x;
+                fixed4 detil = tex2D(_DetilTex, i.uv.zw);
+                fixed detilMask = detil.a;
+                half3 albedo = lerp(_DiffuseColor * tex2D(_Albedo, i.uv.xy).rgb, _DetilColor * tex2D(_DetilTex, i.uv.zw).rgb, detilMask) * _KdKsExpoureParalxScale.x;
+                half3 specular = lerp(_SpecularColor * _KdKsExpoureParalxScale.y, albedo, 1.0 - oneMinusMetallic);
+                albedo *= oneMinusMetallic;
+                IN.Albedo = albedo;
+                IN.SpecularColor = specular;
+                IN.Albedo += IN.SpecularColor * roughness * roughness * 0.5;
+                IN.Emission = 0.0;
+                return UnityMetaFragment(IN);
+            }
+
             ENDCG
         }
     }

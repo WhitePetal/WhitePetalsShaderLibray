@@ -84,6 +84,7 @@ Shader "PBR/PBR_BRDF_LUT"
             sampler2D _LUT, _Albedo, _NormalTex, _DetilTex, _DetilNormalTex, _MRATex, _ParallxTex;
             float4 _Albedo_ST, _DetilTex_ST;
             samplerCUBE _AmbientTex;
+            sampler sampler_AmbientTex;
 
             fixed3 _DiffuseColor, _DetilColor, _Fresnel, _AmbientColor, _SpecularColor, _PointLightColor;
             fixed3 _MetallicRoughnessAO;
@@ -152,25 +153,26 @@ Shader "PBR/PBR_BRDF_LUT"
                 brdfCol += _PointLightColor * i.point_light_params.w * saturate(dot(normalize(i.point_light_params.xyz), n)) * albedo;
                 
                 fixed3 amibientCol;
-                #ifndef LIGHTMAP_ON
+                half3 r = reflect(-v, n);
+                fixed3 ambientSpec = texCUBE(_AmbientTex, r).rgb * _KdKsExpoureParalxScale.y * _AmbientSpecStrength;
+                fixed3 ambientDiff;
                 f = _Fresnel + (1.0 - _Fresnel) * tex2D(_LUT, half2(ndotv, 1)).r;
-                fixed3 ambientSpec = texCUBE(_AmbientTex, reflect(-v, n)).rgb * _KdKsExpoureParalxScale.y * _AmbientSpecStrength;
-                fixed3 ambientDiff = _AmbientColor;
-                amibientCol = (albedo * ambientDiff * (1.0 - f) + specular * ambientSpec * f * 0.25 / (roughness * roughness));
+                #ifndef LIGHTMAP_ON
+                ambientDiff = _AmbientColor;
                     #ifdef VERTEXLIGHT_ON
-                    amibientCol += albedo * (i.vertexLight + saturate(ShadeSH9(float4(n, 1.0))));
+                    ambientDiff +=(i.vertexLight + saturate(ShadeSH9(float4(n, 1.0))));
                     #else
-                    amibientCol += albedo * (saturate(ShadeSH9(float4(n, 1.0))));
+                    ambientDiff += (saturate(ShadeSH9(float4(n, 1.0))));
                     #endif
                 #endif
                 #ifdef LIGHTMAP_ON
-                amibientCol = DecodeLightmap(UNITY_SAMPLE_TEX2D(unity_Lightmap, i.lightMapUV));
+                ambientDiff = DecodeLightmap(UNITY_SAMPLE_TEX2D(unity_Lightmap, i.lightMapUV));
                     #ifdef DIRLIGHTMAP_COMBINED
                     float4 lightmapDirection = UNITY_SAMPLE_TEX2D_SAMPLER(unity_LightmapInd, unity_Lightmap, i.lightMapUV);
-                    amibientCol = DecodeDirectionalLightmap(amibientCol, lightmapDirection, n);
+                    ambientDiff = DecodeDirectionalLightmap(ambientDiff, lightmapDirection, n);
                     #endif
-                    amibientCol *= albedo;
                 #endif
+                amibientCol = (albedo * ambientDiff + specular * ambientSpec * f * 0.25 / (roughness * roughness));
                 fixed4 col = fixed4((brdfCol + amibientCol) * ao, 1.0);
                 return col;
             }
