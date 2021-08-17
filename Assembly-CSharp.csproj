@@ -67,12 +67,21 @@
     <Compile Include="Assets\CrytekSponza\Scripts\ReplaceMaterials.cs" />
     <Compile Include="Assets\SapphiArt\SapphiArtchan\Scripts\AnimationManagerUI.cs" />
     <Compile Include="Assets\SapphiArt\SapphiArtchan\Scripts\SapphiArtChan_AnimManager.cs" />
+    <Compile Include="Assets\Scripts\PostProcess\ACESToneMapping.cs" />
+    <Compile Include="Assets\Scripts\PostProcess\AdjustmentHSV.cs" />
+    <Compile Include="Assets\Scripts\PostProcess\Bloom.cs" />
+    <Compile Include="Assets\Scripts\PostProcess\GaussianBlur.cs" />
+    <Compile Include="Assets\Scripts\PostProcess\Mosaicer.cs" />
+    <Compile Include="Assets\Scripts\PostProcess\PostProcessBase.cs" />
+    <Compile Include="Assets\Scripts\PostProcess\PostProcessProfiler.cs" />
+    <Compile Include="Assets\Scripts\ReplaceMaterialToWhite.cs" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Toon_DoubleShadeWithFeather_Mobile_TransClipping_StencilMask.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Toon_ShadingGradeMap_Mobile_StencilMask.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\Toon_DoubleShadeWithFeather_Tess_Light_StencilMask.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\ToonColor_DoubleShadeWithFeather_TransClipping_Tess.shader" />
     <None Include="Assets\Shaders\Librays\TransformLibrary.cginc" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\UCTS_DoubleShadeWithFeather.cginc" />
+    <None Include="Assets\Shaders\PostProcess\Mosaicer.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\Toon_DoubleShadeWithFeather_Clipping_Tess.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\ToonColor_ShadingGradeMap_Tess.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\ToonColor_ShadingGradeMap_AngelRing_TransClipping_Tess_StencilOut.shader" />
@@ -85,6 +94,7 @@
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\ToonColor_DoubleShadeWithFeather_Tess_StencilOut.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\UCTS_Outline_Tess.cginc" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Toon_ShadingGradeMap_AngelRing_TransClipping_StencilOut.shader" />
+    <None Include="Assets\Shaders\PostProcess\GaussianBlur.shader" />
     <None Include="Assets\Shaders\Librays\LightingLibrary.cginc" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Toon_OutlineObject.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\UCTS_ShadowCaster_Tess.cginc" />
@@ -98,6 +108,7 @@
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Toon_ShadingGradeMap_AngelRing_Mobile.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\ToonColor_DoubleShadeWithFeather_TransClipping_StencilOut.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\Toon_DoubleShadeWithFeather_Tess_Light.shader" />
+    <None Include="Assets\Shaders\PostProcess\Bloom.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\ToonColor_ShadingGradeMap_StencilOut.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\ToonColor_ShadingGradeMap_AngelRing_Tess_TransClipping.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\ToonColor_ShadingGradeMap_AngelRing_StencilOut.shader" />
@@ -186,6 +197,7 @@
     <None Include="Assets\Shaders\ComputeShaders\BRDF_Compute.compute" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\ToonColor_ShadingGradeMap_TransClipping.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Toon_DoubleShadeWithFeather_Clipping_StencilOut.shader" />
+    <None Include="Assets\Shaders\PostProcess\AdjustmentHSV.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\ToonColor_DoubleShadeWithFeather_StencilOut.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Toon_OutlineObject_StencilOut.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\Toon_DoubleShadeWithFeather_Tess_Light_StencilOut.shader" />
@@ -197,6 +209,7 @@
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\Toon_ShadingGradeMap_TransClipping_Tess.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\Toon_DoubleShadeWithFeather_Tess.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\Toon_DoubleShadeWithFeather_TransClipping_Tess.shader" />
+    <None Include="Assets\Shaders\PostProcess\ACESToneMapping.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\ToonColor_ShadingGradeMap.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Tess\ToonColor_ShadingGradeMap_TransClipping_Tess_StencilMask.shader" />
     <None Include="Assets\P06_Pai&amp;Mei\Toon\Shader\Toon_ShadingGradeMap_Mobile_StencilOut.shader" />
@@ -730,6 +743,9 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/SelfProjects/WhitePetalsShaderLibray/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>D:/SelfProjects/WhitePetalsShaderLibray/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>D:/SelfProjects/WhitePetalsShaderLibray/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -747,6 +763,9 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/SelfProjects/WhitePetalsShaderLibray/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>D:/SelfProjects/WhitePetalsShaderLibray/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/SelfProjects/WhitePetalsShaderLibray/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>

@@ -26,6 +26,8 @@
         _SpecColor2("SpecColor2", Color) = (1.0, 1.0, 1.0, 1.0)
         _PointLightColor("Point Light Color", Color) = (0.5492168, 0.6934489, 0.9622642, 1.0)
         [ObjPositionVector]_PointLightPos("Point Light Pos", Vector) = (1.0, .0, .0, 1.0)
+
+        [VectorRange(0.0, 2.0, 0.0, 1.0, 0.0, 1.0)]_PostProcessFactors("辉光强度_辉光阈值_马赛克", Vector) = (1.0, 0.2, 0.0, 0.0)
     }
     SubShader
     {
@@ -79,6 +81,7 @@
             };
 
             #include "../Shaders/Librays/TransformLibrary.cginc"
+            #include "../Shaders/Librays/ShaderUtil.cginc"
 
             sampler2D _LUT, _Albedo, _NormalTex, _DetilTex, _DetilNormalTex, _MRATex, _ParallxTex, _ShiftTex;
             float4 _Albedo_ST, _DetilTex_ST;
@@ -92,6 +95,7 @@
             half4 _Exponents_SpecStrengths;
             half3 _PointLightPos;
             fixed _AmbientSpecStrength;
+            half3 _PostProcessFactors;
 
             v2f vert (appdata v)
             {
@@ -117,7 +121,13 @@
                 return o;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            struct FragOutput
+            {
+                half4 color : SV_TARGET0;
+                fixed4 post_process_flag : SV_TARGET1;
+            };
+
+            FragOutput frag (v2f i) : SV_Target
             {
                 half2 parallxOffset = GetParallxOffset(tex2D(_ParallxTex, i.uv.xy).r, normalize(i.view_tangent), _KdKsExpoureParalxScale.w);
                 i.uv += half4(parallxOffset, parallxOffset);
@@ -185,7 +195,11 @@
                 amibientCol = (albedo * ambientDiff + specular * ambientSpec * f * 0.25 / (roughness * roughness));
 
                 fixed4 col = fixed4((brdfCol + amibientCol) * ao, 1.0);
-                return col;
+                FragOutput output;
+                output.color = col;
+                output.post_process_flag = fixed4(EncodeLuminance(col.rgb, _PostProcessFactors.x, _PostProcessFactors.y), _PostProcessFactors.z, 0.0, 0.0);
+                // output.post_process_flag = col;
+                return output;
             }
 
             ENDCG

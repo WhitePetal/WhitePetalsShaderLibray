@@ -649,6 +649,9 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/SelfProjects/WhitePetalsShaderLibray/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>D:/SelfProjects/WhitePetalsShaderLibray/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>D:/SelfProjects/WhitePetalsShaderLibray/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -666,6 +669,9 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/SelfProjects/WhitePetalsShaderLibray/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>D:/SelfProjects/WhitePetalsShaderLibray/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/SelfProjects/WhitePetalsShaderLibray/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>

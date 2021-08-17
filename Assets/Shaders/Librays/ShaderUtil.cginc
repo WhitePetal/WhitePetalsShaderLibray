@@ -18,4 +18,22 @@ half3 ACESToneMapping(half3 color, half adapted_lum)
 	return (color * (A * color + B)) / (color * (C * color + D) + E);
 }
 
+uniform float _Global_BloomThreshold;
+half EncodeLuminanceImpl(half3 color, half luminance, half threshold)
+{
+	half l = dot(color, fixed3(0.299f, 0.587f, 0.114f));
+	l = max(l - threshold, 0.0) * luminance;
+	l = sqrt(l);
+	l = l / (1 + l);
+	return l; // Inverse luminance
+}
+half EncodeLuminance(half3 color, half luminance)
+{
+	return EncodeLuminanceImpl(color, luminance, _Global_BloomThreshold);
+}
+half EncodeLuminance(half3 color, half luminance, half threshold)
+{
+	return EncodeLuminanceImpl(color, luminance, _Global_BloomThreshold * threshold);
+}
+
 #endif

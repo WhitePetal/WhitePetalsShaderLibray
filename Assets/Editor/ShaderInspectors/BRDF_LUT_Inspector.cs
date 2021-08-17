@@ -72,6 +72,12 @@ public class BRDF_LUT_Inspector : ShaderGUI
 		EditorGUI.indentLevel -= 2;
 
 		GUILayout.Space(20);
+		GUILayout.Label(new GUIContent("PostProcess"));
+		EditorGUI.indentLevel += 2;
+		materialEditor.ShaderProperty(FindProperty("_PostProcessFactors", properties), new GUIContent("_PostProcessFactors"));
+		EditorGUI.indentLevel -= 2;
+
+		GUILayout.Space(20);
 		materialEditor.RenderQueueField();
 	}
 }
