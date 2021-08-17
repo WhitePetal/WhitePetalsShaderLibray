@@ -238,7 +238,7 @@ Material:
     - _Outline_Color: {r: 0.5943396, g: 0.40089887, b: 0.45016697, a: 1}
     - _PointLightColor: {r: 0.22227661, g: 0.29354626, b: 0.4245283, a: 1}
     - _PointLightPos: {r: 0.39438614, g: 1.2268528, b: 0.63326484, a: 1}
-    - _PostProcessFactors: {r: 1, g: 0.2, b: 0.98, a: 0}
+    - _PostProcessFactors: {r: 1, g: 0.2, b: 1, a: 0}
     - _RimLightColor: {r: 0.2264151, g: 0.20398718, b: 0.20959416, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _TuneNormalBlur: {r: 0.39999998, g: 0.19999996, b: 0.09999997, a: 1}

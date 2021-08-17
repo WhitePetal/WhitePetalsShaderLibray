@@ -1,113 +1,219 @@
 Base path: 'D:/UnityHub/2019.4.25f1c1/Editor/Data', plugins path 'D:/UnityHub/2019.4.25f1c1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: preprocess
-  insize=1406 outsize=286 ok=1
+  insize=2199 outsize=232 ok=1
 Cmd: preprocess
-  insize=1412 outsize=292 ok=1
+  insize=2195 outsize=233 ok=1
 Cmd: preprocess
-  insize=1384 outsize=233 ok=1
+  insize=2270 outsize=233 ok=1
 Cmd: preprocess
-  insize=1374 outsize=233 ok=1
+  insize=2297 outsize=231 ok=1
 Cmd: preprocess
-  insize=18835 outsize=2911 ok=1
+  insize=2298 outsize=233 ok=1
+Cmd: preprocess
+  insize=2492 outsize=233 ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=8232 outsize=2330 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=8232 outsize=5074 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=1
-Cmd: preprocess
-  insize=1387 outsize=232 ok=1
-Cmd: preprocess
-  insize=18863 outsize=2921 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=8250 outsize=2330 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=8250 outsize=5098 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=1
-Cmd: preprocess
-  insize=1381 outsize=232 ok=1
-Cmd: preprocess
-  insize=1380 outsize=233 ok=1
-Cmd: preprocess
-  insize=1381 outsize=232 ok=1
-Cmd: preprocess
-  insize=1384 outsize=233 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1587 outsize=794 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1587 outsize=562 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=1
-Cmd: preprocess
-  insize=1356 outsize=233 ok=1
-Cmd: preprocess
-  insize=1336 outsize=233 ok=1
-Cmd: preprocess
-  insize=1355 outsize=232 ok=1
-Cmd: compileSnippet
-  error: 2 plat 4 at (38): 'modf': no matching 1 parameter intrinsic function; Possible intrinsic functions are: modf(float|half|min10float|min16float, out float|half|min10float|min16float ip)\nCompiling Vertex program
+  error: 2 plat 4 at (62): redefinition of 'flag'\nCompiling Vertex program
 Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=0 insize=1558 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+  api=4 type=0 insize=2695 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
 Cmd: compileSnippet
-  error: 2 plat 4 at (38): 'modf': no matching 1 parameter intrinsic function; Possible intrinsic functions are: modf(float|half|min10float|min16float, out float|half|min10float|min16float ip)\nCompiling Fragment program
+  error: 2 plat 4 at (62): redefinition of 'flag'\nCompiling Fragment program
 Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=1 insize=1558 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+  api=4 type=1 insize=2695 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
 Cmd: preprocess
-  insize=1337 outsize=233 ok=1
+  insize=2486 outsize=233 ok=1
 Cmd: preprocess
-  insize=1356 outsize=233 ok=1
+  insize=2460 outsize=233 ok=1
 Cmd: preprocess
-  insize=1330 outsize=233 ok=1
+  insize=2460 outsize=231 ok=1
 Cmd: preprocess
-  insize=1378 outsize=233 ok=1
+  insize=2460 outsize=233 ok=1
+Cmd: preprocess
+  insize=2463 outsize=232 ok=1
+Cmd: preprocess
+  insize=2460 outsize=233 ok=1
+Cmd: preprocess
+  insize=2470 outsize=233 ok=1
+Cmd: preprocess
+  insize=2470 outsize=233 ok=1
+Cmd: preprocess
+  insize=2470 outsize=233 ok=1
+Cmd: preprocess
+  insize=2495 outsize=232 ok=1
+Cmd: preprocess
+  insize=2497 outsize=233 ok=1
+Cmd: preprocess
+  insize=2470 outsize=233 ok=1
+Cmd: preprocess
+  insize=2248 outsize=233 ok=1
+Cmd: preprocess
+  insize=2246 outsize=233 ok=1
+Cmd: preprocess
+  insize=2247 outsize=233 ok=1
+Cmd: preprocess
+  insize=2246 outsize=233 ok=1
+Cmd: preprocess
+  insize=3339 outsize=334 ok=1
 Cmd: compileSnippet
-  error: 2 plat 4 at (38): invalid subscript 'xy'\nCompiling Vertex program
+  error: 2 plat 4 at (100): undeclared identifier 'mosic'\nCompiling Vertex program
 Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=0 insize=1581 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+  api=4 type=0 insize=1436 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
 Cmd: compileSnippet
-  error: 2 plat 4 at (38): invalid subscript 'xy'\nCompiling Fragment program
+  error: 2 plat 4 at (100): undeclared identifier 'mosic'\nCompiling Fragment program
 Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=1 insize=1581 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+  api=4 type=1 insize=1436 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
 Cmd: preprocess
-  insize=1362 outsize=233 ok=1
-Cmd: preprocess
-  insize=1359 outsize=233 ok=1
-Cmd: preprocess
-  insize=1353 outsize=233 ok=1
-Cmd: preprocess
-  insize=1356 outsize=233 ok=1
-Cmd: preprocess
-  insize=1384 outsize=233 ok=1
-Cmd: preprocess
-  insize=1390 outsize=233 ok=1
-Cmd: preprocess
-  insize=1913 outsize=233 ok=1
+  insize=3408 outsize=333 ok=1
 Cmd: compileSnippet
-  error: 2 plat 4 at (53): undeclared identifier 'mosic'\nCompiling Vertex program
+  error: 2 plat 4 at (99): invalid subscript 'i'\nCompiling Vertex program
 Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=0 insize=2116 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+  api=4 type=0 insize=1505 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
 Cmd: compileSnippet
-  error: 2 plat 4 at (53): undeclared identifier 'mosic'\nCompiling Fragment program
+  error: 2 plat 4 at (99): invalid subscript 'i'\nCompiling Fragment program
 Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=1 insize=2116 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+  api=4 type=1 insize=1505 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
 Cmd: preprocess
-  insize=1891 outsize=233 ok=1
+  insize=3411 outsize=333 ok=1
 Cmd: preprocess
-  insize=1893 outsize=233 ok=1
+  insize=3411 outsize=334 ok=1
 Cmd: preprocess
-  insize=1963 outsize=232 ok=1
+  insize=3429 outsize=336 ok=1
 Cmd: preprocess
-  insize=2056 outsize=233 ok=1
+  insize=4026 outsize=336 ok=1
 Cmd: preprocess
-  insize=21045 outsize=3139 ok=1
+  insize=4025 outsize=336 ok=1
 Cmd: preprocess
-  insize=21051 outsize=3139 ok=1
+  insize=4024 outsize=336 ok=1
 Cmd: preprocess
-  insize=19038 outsize=2769 ok=1
+  insize=3943 outsize=336 ok=1
+Cmd: preprocess
+  insize=3928 outsize=335 ok=1
+Cmd: preprocess
+  insize=3943 outsize=336 ok=1
+Cmd: preprocess
+  insize=3928 outsize=335 ok=1
+Cmd: preprocess
+  insize=3935 outsize=336 ok=1
+Cmd: preprocess
+  insize=3943 outsize=335 ok=1
+Cmd: preprocess
+  insize=3928 outsize=335 ok=1
+Cmd: preprocess
+  insize=3930 outsize=335 ok=1
+Cmd: preprocess
+  insize=3945 outsize=335 ok=1
+Cmd: preprocess
+  insize=3945 outsize=334 ok=1
+Cmd: preprocess
+  insize=3461 outsize=335 ok=1
+Cmd: preprocess
+  insize=3522 outsize=336 ok=1
+Cmd: preprocess
+  insize=3494 outsize=336 ok=1
+Cmd: preprocess
+  insize=3506 outsize=336 ok=1
+Cmd: preprocess
+  insize=3505 outsize=335 ok=1
+Cmd: preprocess
+  insize=3508 outsize=335 ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=9256 outsize=2346 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=1
-Cmd: compileSnippet
-  error: 1 plat 4 at (130): semantics in type overridden by variable/function or enclosing type\nCompiling Fragment program with UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH
+  error: 2 plat 4 at (106): undeclared identifier 'flag'\nCompiling Vertex program
 Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=1 insize=9256 outsize=6358 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=1
+  api=4 type=0 insize=1518 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+Cmd: compileSnippet
+  error: 2 plat 4 at (106): undeclared identifier 'flag'\nCompiling Fragment program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
+  api=4 type=1 insize=1518 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
 Cmd: preprocess
-  insize=19048 outsize=2779 ok=1
+  insize=3494 outsize=336 ok=1
+Cmd: preprocess
+  insize=3495 outsize=336 ok=1
+Cmd: preprocess
+  insize=3498 outsize=336 ok=1
+Cmd: preprocess
+  insize=3498 outsize=336 ok=1
+Cmd: preprocess
+  insize=3494 outsize=335 ok=1
+Cmd: preprocess
+  insize=3464 outsize=336 ok=1
+Cmd: preprocess
+  insize=3439 outsize=336 ok=1
+Cmd: preprocess
+  insize=3464 outsize=336 ok=1
+Cmd: preprocess
+  insize=6019 outsize=431 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (48): redefinition of 'uv1'\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
+  api=4 type=0 insize=2723 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+Cmd: compileSnippet
+  error: 2 plat 4 at (48): redefinition of 'uv1'\nCompiling Fragment program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
+  api=4 type=1 insize=2723 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+Cmd: compileSnippet
+  error: 2 plat 4 at (112): redefinition of 'uv1'\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
+  api=4 type=0 insize=2685 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+Cmd: compileSnippet
+  error: 2 plat 4 at (112): redefinition of 'uv1'\nCompiling Fragment program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
+  api=4 type=1 insize=2685 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+Cmd: compileSnippet
+  api=4 type=0 insize=1506 outsize=690 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1506 outsize=486 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=1
+Cmd: preprocess
+  insize=5800 outsize=430 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (48): redefinition of 'uv1'\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
+  api=4 type=0 insize=2723 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+Cmd: compileSnippet
+  error: 2 plat 4 at (48): redefinition of 'uv1'\nCompiling Fragment program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
+  api=4 type=1 insize=2723 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+Cmd: preprocess
+  insize=5581 outsize=430 ok=1
+Cmd: preprocess
+  insize=5585 outsize=430 ok=1
+Cmd: preprocess
+  insize=5578 outsize=430 ok=1
+Cmd: preprocess
+  insize=5570 outsize=430 ok=1
+Cmd: preprocess
+  insize=5577 outsize=430 ok=1
+Cmd: preprocess
+  insize=5563 outsize=430 ok=1
+Cmd: preprocess
+  insize=5603 outsize=431 ok=1
+Cmd: preprocess
+  insize=5603 outsize=431 ok=1
+Cmd: preprocess
+  insize=5603 outsize=431 ok=1
+Cmd: preprocess
+  insize=5606 outsize=431 ok=1
+Cmd: preprocess
+  insize=5563 outsize=430 ok=1
+Cmd: preprocess
+  insize=5567 outsize=430 ok=1
+Cmd: preprocess
+  insize=5574 outsize=430 ok=1
+Cmd: preprocess
+  insize=5567 outsize=430 ok=1
+Cmd: preprocess
+  insize=5563 outsize=430 ok=1
+Cmd: preprocess
+  insize=5559 outsize=430 ok=1
+Cmd: preprocess
+  insize=5563 outsize=430 ok=1
+Cmd: preprocess
+  insize=5559 outsize=430 ok=1
+Cmd: preprocess
+  insize=5566 outsize=430 ok=1
+Cmd: preprocess
+  insize=5559 outsize=430 ok=1
+Cmd: preprocess
+  insize=5558 outsize=431 ok=1
 Cmd: shutdown
 
 Quitting shader compiler process

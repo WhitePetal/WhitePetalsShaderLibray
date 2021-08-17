@@ -3330,8 +3330,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b55e20e5e05be49bac63844d64d38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mosaicerDensity: 5
+  mosaicerDensity: 43
   mosaicerMulit: 1
+  downSample: 4
 --- !u!1 &522612111
 GameObject:
   m_ObjectHideFlags: 0
