@@ -70,6 +70,7 @@
     <Compile Include="Assets\Editor\ShaderInspectors\Fur_Inspector.cs" />
     <Compile Include="Assets\Editor\ShaderInspectors\ObjPositionVectorDrawer.cs" />
     <Compile Include="Assets\Editor\ShaderInspectors\VectorRangeDrawer.cs" />
+    <Compile Include="Assets\Editor\Texture3DGenerater.cs" />
     <Compile Include="Assets\Editor\Tools\GenerateRenderLUT.cs" />
     <Compile Include="Assets\Editor\Tools\ReplaceMaterialsEditor.cs" />
     <Compile Include="Assets\P06_Pai&amp;Mei\Toon\Editor\CopyMaterialParameter.cs" />
