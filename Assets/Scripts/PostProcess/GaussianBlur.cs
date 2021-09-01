@@ -45,10 +45,10 @@ public class GaussianBlur : PostProcessBase
 		Graphics.Blit(src, rt0);
 		for (int i = 0; i < iteration; ++i)
 		{
-			material.SetVector(gaussBlurOffset_id, new Vector4(1.0f + blurRadius / src.width, 0f, 0f));
+			material.SetVector(gaussBlurOffset_id, new Vector4(i * blurRadius / src.width, 0f, 0f));
 			Graphics.Blit(rt0, rt1, material);
 
-			material.SetVector(gaussBlurOffset_id, new Vector4(0f, 1.0f + blurRadius / src.height, 0f, 0f));
+			material.SetVector(gaussBlurOffset_id, new Vector4(0f, i * blurRadius / src.height, 0f, 0f));
 			Graphics.Blit(rt1, rt0, material);
 		}
 		Graphics.Blit(rt0, dst);

@@ -276,19 +276,19 @@ Material:
     - _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _Emissive_Color: {r: 0, g: 0, b: 0, a: 1}
-    - _Exponents_SpecStrengths: {r: 1, g: 0.429, b: 0.24, a: 0.18}
+    - _Exponents_SpecStrengths: {r: 1, g: 0.429, b: 0.4, a: 0.56}
     - _Fresnel: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 1}
     - _HighColor: {r: 0.22227661, g: 0.25339252, b: 0.254717, a: 1}
     - _KdKsExpoureParalxScale: {r: 0.6, g: 0.25, b: 0.04, a: 0.04}
     - _MatCapColor: {r: 0.3661445, g: 0.41509432, b: 0.41203496, a: 1}
-    - _MetallicRoughnessAO: {r: 0, g: 0.629, b: 1, a: 1}
+    - _MetallicRoughnessAO: {r: 0, g: 0.746, b: 1, a: 1}
     - _NormalScales: {r: 0, g: 1, b: 0, a: 0}
     - _Outline_Color: {r: 0.24705882, g: 0.36768618, b: 0.4627451, a: 1}
     - _PointLightColor: {r: 0.5492168, g: 0.6934489, b: 0.9622641, a: 1}
     - _PointLightPos: {r: 0.887525, g: 1.1740121, b: -0.013955649, a: 1}
-    - _PostProcessFactors: {r: 1, g: 0.2, b: 1, a: 0}
+    - _PostProcessFactors: {r: 1, g: 0.9, b: 1, a: 0}
     - _RimLightColor: {r: 0.13843897, g: 0.14397381, b: 0.16037738, a: 1}
-    - _Shifts_SpecularWidths: {r: 0.5, g: 1.1, b: -1, a: -0.819}
+    - _Shifts_SpecularWidths: {r: 2.7, g: 5.2, b: -1, a: -0.819}
     - _SpecColor1: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
     - _SpecColor2: {r: 0.51690996, g: 0.8431826, b: 0.9056604, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}

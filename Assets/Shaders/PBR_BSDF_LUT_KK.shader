@@ -31,7 +31,7 @@
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "RenderType"="Opaque" "RenderWithShader"="MShadow"}
 
         Pass
         {
@@ -68,7 +68,7 @@
                 half3 normal_world : TEXCOORD1;
                 half3 tangent_world : TEXCOORD2;
                 half3 binormal_world : TEXCOORD3;
-                float3 pos_world : TEXCOORD4;
+                float4 pos_world : TEXCOORD4; // w => depth Linear 0 1
                 half3 view_tangent : TEXCOORD5;
                 half4 point_light_params : TEXCOORD6;
                 #ifdef VERTEXLIGHT_ON
@@ -77,11 +77,14 @@
                 #ifdef LIGHTMAP_ON
                 float2 lightMapUV : TEXCOORD7;
                 #endif
-                SHADOW_COORDS(8)
+                float4 shadowCoord : TEXCOORD8;
             };
 
             #include "../Shaders/Librays/TransformLibrary.cginc"
             #include "../Shaders/Librays/ShaderUtil.cginc"
+
+            uniform sampler2D _MShadowMap;
+            uniform float4x4 _MWorldToShadowClipMat;
 
             sampler2D _LUT, _Albedo, _NormalTex, _DetilTex, _DetilNormalTex, _MRATex, _ParallxTex, _ShiftTex;
             float4 _Albedo_ST, _DetilTex_ST;
@@ -100,13 +103,18 @@
             v2f vert (appdata v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
+                o.pos_world = mul(unity_ObjectToWorld, v.vertex);
+                float4 vPos = mul(UNITY_MATRIX_V, o.pos_world);
+                o.vertex = mul(UNITY_MATRIX_P, vPos);
+                o.pos_world = float4(o.pos_world.xyz, -vPos.z * _ProjectionParams.w);
+
+                // o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv.xy = TRANSFORM_TEX(v.texcoord, _Albedo); // main map
                 o.uv.zw = TRANSFORM_TEX(v.texcoord, _DetilTex); // detil map
                 o.normal_world = UnityObjectToWorldDir(v.normal);
                 o.tangent_world = UnityObjectToWorldDir(v.tangent);
                 o.binormal_world = cross(o.normal_world, o.tangent_world) * v.tangent.w * unity_WorldTransformParams.w;
-                o.pos_world = mul(unity_ObjectToWorld, v.vertex).xyz;
+                // o.pos_world = mul(unity_ObjectToWorld, v.vertex).xyz;
                 o.view_tangent = GetTangentSpaceViewDir(v.tangent, v.normal, v.vertex);
                 o.point_light_params.xyz = _PointLightPos - v.vertex.xyz;
                 o.point_light_params.w = 1.0 / max(dot(o.point_light_params.xyz, o.point_light_params.xyz), 0.001);
@@ -117,7 +125,7 @@
                 #ifdef LIGHTMAP_ON
                 o.lightMapUV = v.texcoord1.xy * unity_LightmapST.xy + unity_LightmapST.zw;
                 #endif
-                TRANSFER_SHADOW(o);
+                o.shadowCoord = mul(_MWorldToShadowClipMat, float4(o.pos_world.xyz, 1.0));
                 return o;
             }
 
@@ -169,7 +177,11 @@
                 half3 d2 = tex2D(_LUT, half2(t2doth * t2doth, _Exponents_SpecStrengths.y)).a * dirAtten2 * _SpecColor2 * _Exponents_SpecStrengths.w;
                 half3 df = d1 + d2;
 
-                UNITY_LIGHT_ATTENUATION(atten, i, i.pos_world);
+                i.shadowCoord.xyz /= i.shadowCoord.w;
+                i.shadowCoord.xyz = i.shadowCoord.xyz * 0.5 + 0.5;
+                float depth_shadow = i.shadowCoord.z / i.shadowCoord.w;
+                float depth_sample_shadow = DecodeFloatRG(tex2D(_MShadowMap, i.shadowCoord.xy).rg);
+                half atten = step(depth_shadow, depth_sample_shadow);
                 fixed3 brdfCol = ((1 - f) * albedo * ndotl.x + specular * f * g * d * df / ndotv) * _LightColor0.rgb * atten;
                 brdfCol += _PointLightColor * i.point_light_params.w * saturate(dot(normalize(i.point_light_params.xyz), n)) * albedo;
 
@@ -197,7 +209,7 @@
                 fixed4 col = fixed4((brdfCol + amibientCol) * ao, 1.0);
                 FragOutput output;
                 output.color = col;
-                output.post_process_flag = fixed4(EncodeLuminance(col.rgb, _PostProcessFactors.x, _PostProcessFactors.y), _PostProcessFactors.z, 0.0, 0.0);
+                output.post_process_flag = fixed4(EncodeLuminance(col.rgb, _PostProcessFactors.x, _PostProcessFactors.y), _PostProcessFactors.z, 0.0, i.pos_world.w);
                 // output.post_process_flag = col;
                 return output;
             }

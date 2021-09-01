@@ -32,7 +32,7 @@ Shader "PBR/PBR_BRDF_LUT"
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "RenderType"="Opaque" "RenderWithShader"="MShadow"}
 
         Pass
         {
@@ -69,7 +69,7 @@ Shader "PBR/PBR_BRDF_LUT"
                 half3 normal_world : TEXCOORD1;
                 half3 tangent_world : TEXCOORD2;
                 half3 binormal_world : TEXCOORD3;
-                float3 pos_world : TEXCOORD4;
+                float4 pos_world : TEXCOORD4; // w => depth
                 half3 view_tangent : TEXCOORD5;
                 half4 point_light_params : TEXCOORD6;
                 #ifdef VERTEXLIGHT_ON
@@ -78,11 +78,14 @@ Shader "PBR/PBR_BRDF_LUT"
                 #ifdef LIGHTMAP_ON
                 float2 lightMapUV : TEXCOORD07;
                 #endif
-                SHADOW_COORDS(8)
+                float4 shadowCoord : TEXCOORD8;
             };
 
             #include "../Shaders/Librays/TransformLibrary.cginc"
             #include "../Shaders/Librays/ShaderUtil.cginc"
+
+            uniform sampler2D _MShadowMap;
+            uniform float4x4 _MWorldToShadowClipMat;
 
             sampler2D _LUT, _Albedo, _NormalTex, _DetilTex, _DetilNormalTex, _MRATex, _ParallxTex;
             float4 _Albedo_ST, _DetilTex_ST;
@@ -100,31 +103,36 @@ Shader "PBR/PBR_BRDF_LUT"
             v2f vert (appdata v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
+                o.pos_world = mul(unity_ObjectToWorld, v.vertex);
+                float4 vPos = mul(UNITY_MATRIX_V, o.pos_world);
+                o.vertex = mul(UNITY_MATRIX_P, vPos);
+                o.pos_world = float4(o.pos_world.xyz, -vPos.z * _ProjectionParams.w);
+
+                // o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv.xy = TRANSFORM_TEX(v.texcoord, _Albedo); // main map
                 o.uv.zw = TRANSFORM_TEX(v.texcoord, _DetilTex); // detil map
                 o.normal_world = UnityObjectToWorldNormal(v.normal);
                 o.tangent_world = UnityObjectToWorldDir(v.tangent);
                 o.binormal_world = cross(o.normal_world, o.tangent_world) * v.tangent.w * unity_WorldTransformParams.w;
-                o.pos_world = mul(unity_ObjectToWorld, v.vertex).xyz;
+                // o.pos_world = mul(unity_ObjectToWorld, v.vertex).xyz;
                 o.view_tangent = GetTangentSpaceViewDir(v.tangent, v.normal, v.vertex);
                 o.point_light_params.xyz = _PointLightPos - v.vertex.xyz;
                 o.point_light_params.w = 1.0 / max(dot(o.point_light_params.xyz, o.point_light_params.xyz), 0.001);
-                o.point_light_params.xyz = mul(unity_ObjectToWorld, float4(_PointLightPos, 1.0)) - o.pos_world;
+                o.point_light_params.xyz = mul(unity_ObjectToWorld, float4(_PointLightPos, 1.0)) - o.pos_world.xyz;
                 #ifdef VERTEXLIGHT_ON
                 o.vertexLight = Shade4PointLights(unity_4LightPosX0, unity_4LightPosY0, unity_4LightPosZ0, unity_LightColor[0].rgb, unity_LightColor[1].rgb, unity_LightColor[2], unity_LightColor[3], unity_4LightAtten0, o.pos_world, o.normal_world);
                 #endif
                 #ifdef LIGHTMAP_ON
                 o.lightMapUV = v.texcoord1.xy * unity_LightmapST.xy + unity_LightmapST.zw;
                 #endif
-                TRANSFER_SHADOW(o);
+                o.shadowCoord = mul(_MWorldToShadowClipMat, float4(o.pos_world.xyz, 1.0));
                 return o;
             }
 
             struct FragOutput
             {
                 half4 color : SV_TARGET0;
-                fixed4 post_process_flag : SV_TARGET1;
+                half4 post_process_flag : SV_TARGET1;
             };
 
             FragOutput frag (v2f i)
@@ -135,8 +143,8 @@ Shader "PBR/PBR_BRDF_LUT"
                 fixed detilMask = detil.a;
                 half3 n = GetBlendNormalWorldFromMap(i, tex2D(_NormalTex, i.uv.xy), tex2D(_DetilNormalTex, i.uv.zw), _NormalScales.x, _NormalScales.y, detilMask);
 
-                half3 v = normalize(UnityWorldSpaceViewDir(i.pos_world));
-                half3 l = normalize(UnityWorldSpaceLightDir(i.pos_world));
+                half3 v = normalize(UnityWorldSpaceViewDir(i.pos_world.xyz));
+                half3 l = normalize(UnityWorldSpaceLightDir(i.pos_world.xyz));
                 half3 h = normalize(l + v);
                 fixed ndotl = saturate(DotClamped(l, n) + _KdKsExpoureParalxScale.z);
                 fixed ndotv = max(0.01, dot(v, n));
@@ -158,7 +166,12 @@ Shader "PBR/PBR_BRDF_LUT"
                 half3 specular = lerp(_SpecularColor * _KdKsExpoureParalxScale.y, albedo, 1.0 - oneMinusMetallic);
                 albedo *= oneMinusMetallic;
 
-                UNITY_LIGHT_ATTENUATION(atten, i, i.pos_world);
+                // UNITY_LIGHT_ATTENUATION(atten, i, i.pos_world.xyz);
+                i.shadowCoord.xyz /= i.shadowCoord.w;
+                i.shadowCoord.xyz = i.shadowCoord.xyz * 0.5 + 0.5;
+                float depth_shadow = i.shadowCoord.z / i.shadowCoord.w;
+                float depth_sample_shadow = DecodeFloatRG(tex2D(_MShadowMap, i.shadowCoord.xy).rg);
+                half atten = step(depth_shadow, depth_sample_shadow);
                 fixed3 brdfCol = ((1 - f) * albedo * ndotl + specular * f * g * d / ndotv) * _LightColor0.rgb * atten;
                 brdfCol += _PointLightColor * i.point_light_params.w * saturate(dot(normalize(i.point_light_params.xyz), n)) * albedo;
                 
@@ -186,7 +199,9 @@ Shader "PBR/PBR_BRDF_LUT"
                 fixed4 col = fixed4((brdfCol + amibientCol) * ao, 1.0);
                 FragOutput output;
                 output.color = col;
-                output.post_process_flag = fixed4(EncodeLuminance(col.rgb, _PostProcessFactors.x, _PostProcessFactors.y), _PostProcessFactors.z, 0.0, 0.0);
+                // b => light space depth
+                // a => depth(Linear 0 1)
+                output.post_process_flag = half4(EncodeLuminance(col.rgb, _PostProcessFactors.x, _PostProcessFactors.y), _PostProcessFactors.z, 0.0, i.pos_world.w);
                 // output.post_process_flag = col;
                 return output;
             }
