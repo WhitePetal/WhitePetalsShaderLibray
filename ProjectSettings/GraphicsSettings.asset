@@ -42,9 +42,9 @@ GraphicsSettings:
   - {fileID: 4800000, guid: 6f592b8c3c351ae45904c2fc523ac3c3, type: 3}
   - {fileID: 4800000, guid: fd70df70a81a7a04c8ab7a4b51b5fd32, type: 3}
   - {fileID: 4800000, guid: d1e3d4d12b6e0b9458f8cd1d7c680611, type: 3}
-  - {fileID: 17000, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 17000, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 17000, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 4800000, guid: c0be2d05c8cd7a446a7b78a8598e287f, type: 3}
+  - {fileID: 4800000, guid: 84d0d91ee8550fc498ab5b1bf6db7a0f, type: 3}
+  - {fileID: 4800000, guid: 383c764c6796ddd47984766af9cbabf6, type: 3}
   - {fileID: 17000, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 17000, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 17000, guid: 0000000000000000f000000000000000, type: 0}

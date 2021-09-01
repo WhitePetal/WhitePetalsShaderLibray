@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/CrytekSponza/Sample.unity
+    guid: 09c70acff2dc4294599a776ea772a29c
   m_configObjects: {}

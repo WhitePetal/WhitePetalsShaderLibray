@@ -1,219 +1,565 @@
 Base path: 'D:/UnityHub/2019.4.25f1c1/Editor/Data', plugins path 'D:/UnityHub/2019.4.25f1c1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: preprocess
-  insize=2199 outsize=232 ok=1
+  insize=3640 outsize=353 ok=1
 Cmd: preprocess
-  insize=2195 outsize=233 ok=1
+  insize=4125 outsize=352 ok=1
 Cmd: preprocess
-  insize=2270 outsize=233 ok=1
+  insize=3806 outsize=353 ok=1
 Cmd: preprocess
-  insize=2297 outsize=231 ok=1
+  insize=3807 outsize=353 ok=1
 Cmd: preprocess
-  insize=2298 outsize=233 ok=1
+  insize=3820 outsize=353 ok=1
 Cmd: preprocess
-  insize=2492 outsize=233 ok=1
+  insize=3820 outsize=353 ok=1
+Cmd: preprocess
+  insize=3819 outsize=353 ok=1
+Cmd: preprocess
+  insize=3820 outsize=353 ok=1
+Cmd: preprocess
+  insize=1205 outsize=251 ok=1
+Cmd: preprocess
+  insize=1207 outsize=251 ok=1
+Cmd: preprocess
+  insize=1212 outsize=251 ok=1
+Cmd: preprocess
+  insize=1207 outsize=251 ok=1
+Cmd: preprocess
+  insize=1210 outsize=251 ok=1
+Cmd: preprocess
+  insize=1205 outsize=251 ok=1
+Cmd: preprocess
+  insize=3820 outsize=353 ok=1
+Cmd: preprocess
+  insize=3820 outsize=353 ok=1
 Cmd: compileSnippet
-  error: 2 plat 4 at (62): redefinition of 'flag'\nCompiling Vertex program
-Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=0 insize=2695 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+  api=4 type=0 insize=5982 outsize=1974 kw=UNITY_PASS_FORWARDADD DIRECTIONAL pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=1
 Cmd: compileSnippet
-  error: 2 plat 4 at (62): redefinition of 'flag'\nCompiling Fragment program
-Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=1 insize=2695 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+  api=4 type=1 insize=5982 outsize=4702 kw=UNITY_PASS_FORWARDADD DIRECTIONAL pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=1
 Cmd: preprocess
-  insize=2486 outsize=233 ok=1
-Cmd: preprocess
-  insize=2460 outsize=233 ok=1
-Cmd: preprocess
-  insize=2460 outsize=231 ok=1
-Cmd: preprocess
-  insize=2460 outsize=233 ok=1
-Cmd: preprocess
-  insize=2463 outsize=232 ok=1
-Cmd: preprocess
-  insize=2460 outsize=233 ok=1
-Cmd: preprocess
-  insize=2470 outsize=233 ok=1
-Cmd: preprocess
-  insize=2470 outsize=233 ok=1
-Cmd: preprocess
-  insize=2470 outsize=233 ok=1
-Cmd: preprocess
-  insize=2495 outsize=232 ok=1
-Cmd: preprocess
-  insize=2497 outsize=233 ok=1
-Cmd: preprocess
-  insize=2470 outsize=233 ok=1
-Cmd: preprocess
-  insize=2248 outsize=233 ok=1
-Cmd: preprocess
-  insize=2246 outsize=233 ok=1
-Cmd: preprocess
-  insize=2247 outsize=233 ok=1
-Cmd: preprocess
-  insize=2246 outsize=233 ok=1
-Cmd: preprocess
-  insize=3339 outsize=334 ok=1
+  insize=3820 outsize=353 ok=1
 Cmd: compileSnippet
-  error: 2 plat 4 at (100): undeclared identifier 'mosic'\nCompiling Vertex program
-Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=0 insize=1436 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+  api=4 type=0 insize=1298 outsize=1414 kw=UNITY_PASS_SHADOWCASTER SHADOWS_DEPTH _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=1
 Cmd: compileSnippet
-  error: 2 plat 4 at (100): undeclared identifier 'mosic'\nCompiling Fragment program
-Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=1 insize=1436 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
-Cmd: preprocess
-  insize=3408 outsize=333 ok=1
+  api=4 type=1 insize=1298 outsize=218 kw=UNITY_PASS_SHADOWCASTER SHADOWS_DEPTH _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=1
 Cmd: compileSnippet
-  error: 2 plat 4 at (99): invalid subscript 'i'\nCompiling Vertex program
-Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=0 insize=1505 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+  api=4 type=0 insize=1598 outsize=2254 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=1
 Cmd: compileSnippet
-  error: 2 plat 4 at (99): invalid subscript 'i'\nCompiling Fragment program
-Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=1 insize=1505 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
-Cmd: preprocess
-  insize=3411 outsize=333 ok=1
-Cmd: preprocess
-  insize=3411 outsize=334 ok=1
-Cmd: preprocess
-  insize=3429 outsize=336 ok=1
-Cmd: preprocess
-  insize=4026 outsize=336 ok=1
-Cmd: preprocess
-  insize=4025 outsize=336 ok=1
-Cmd: preprocess
-  insize=4024 outsize=336 ok=1
-Cmd: preprocess
-  insize=3943 outsize=336 ok=1
-Cmd: preprocess
-  insize=3928 outsize=335 ok=1
-Cmd: preprocess
-  insize=3943 outsize=336 ok=1
-Cmd: preprocess
-  insize=3928 outsize=335 ok=1
-Cmd: preprocess
-  insize=3935 outsize=336 ok=1
-Cmd: preprocess
-  insize=3943 outsize=335 ok=1
-Cmd: preprocess
-  insize=3928 outsize=335 ok=1
-Cmd: preprocess
-  insize=3930 outsize=335 ok=1
-Cmd: preprocess
-  insize=3945 outsize=335 ok=1
-Cmd: preprocess
-  insize=3945 outsize=334 ok=1
-Cmd: preprocess
-  insize=3461 outsize=335 ok=1
-Cmd: preprocess
-  insize=3522 outsize=336 ok=1
-Cmd: preprocess
-  insize=3494 outsize=336 ok=1
-Cmd: preprocess
-  insize=3506 outsize=336 ok=1
-Cmd: preprocess
-  insize=3505 outsize=335 ok=1
-Cmd: preprocess
-  insize=3508 outsize=335 ok=1
+  api=4 type=1 insize=1598 outsize=3194 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=1
 Cmd: compileSnippet
-  error: 2 plat 4 at (106): undeclared identifier 'flag'\nCompiling Vertex program
-Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=0 insize=1518 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+  api=4 type=0 insize=1455 outsize=2070 kw=UNITY_PASS_FORWARDADD DIRECTIONAL _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=1
 Cmd: compileSnippet
-  error: 2 plat 4 at (106): undeclared identifier 'flag'\nCompiling Fragment program
-Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=1 insize=1518 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+  api=4 type=1 insize=1455 outsize=1894 kw=UNITY_PASS_FORWARDADD DIRECTIONAL _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=1
 Cmd: preprocess
-  insize=3494 outsize=336 ok=1
+  insize=1207 outsize=253 ok=1
 Cmd: preprocess
-  insize=3495 outsize=336 ok=1
+  insize=1208 outsize=254 ok=1
 Cmd: preprocess
-  insize=3498 outsize=336 ok=1
+  insize=1225 outsize=253 ok=1
 Cmd: preprocess
-  insize=3498 outsize=336 ok=1
+  insize=1210 outsize=253 ok=1
 Cmd: preprocess
-  insize=3494 outsize=335 ok=1
+  insize=1252 outsize=253 ok=1
 Cmd: preprocess
-  insize=3464 outsize=336 ok=1
+  insize=1245 outsize=253 ok=1
 Cmd: preprocess
-  insize=3439 outsize=336 ok=1
+  insize=1210 outsize=253 ok=1
 Cmd: preprocess
-  insize=3464 outsize=336 ok=1
+  insize=1244 outsize=253 ok=1
 Cmd: preprocess
-  insize=6019 outsize=431 ok=1
+  insize=1245 outsize=254 ok=1
+Cmd: preprocess
+  insize=1242 outsize=251 ok=1
+Cmd: preprocess
+  insize=1231 outsize=251 ok=1
+Cmd: preprocess
+  insize=1232 outsize=251 ok=1
+Cmd: preprocess
+  insize=1243 outsize=251 ok=1
+Cmd: preprocess
+  insize=19838 outsize=2949 ok=1
+Cmd: preprocess
+  insize=1242 outsize=251 ok=1
+Cmd: preprocess
+  insize=1244 outsize=253 ok=1
+Cmd: preprocess
+  insize=19838 outsize=2950 ok=1
+Cmd: preprocess
+  insize=1244 outsize=253 ok=1
+Cmd: preprocess
+  insize=1245 outsize=253 ok=1
+Cmd: preprocess
+  insize=1253 outsize=253 ok=1
+Cmd: preprocess
+  insize=1254 outsize=254 ok=1
+Cmd: preprocess
+  insize=1245 outsize=254 ok=1
+Cmd: preprocess
+  insize=1242 outsize=251 ok=1
+Cmd: preprocess
+  insize=1265 outsize=274 ok=1
+Cmd: preprocess
+  insize=1274 outsize=274 ok=1
+Cmd: preprocess
+  insize=1267 outsize=273 ok=1
+Cmd: preprocess
+  insize=1273 outsize=274 ok=1
+Cmd: preprocess
+  insize=1279 outsize=273 ok=1
+Cmd: preprocess
+  insize=1317 outsize=274 ok=1
+Cmd: preprocess
+  insize=1322 outsize=276 ok=1
+Cmd: preprocess
+  insize=1319 outsize=276 ok=1
+Cmd: preprocess
+  insize=3820 outsize=353 ok=1
+Cmd: preprocess
+  insize=3820 outsize=353 ok=1
+Cmd: preprocess
+  insize=1319 outsize=275 ok=1
+Cmd: preprocess
+  insize=3820 outsize=353 ok=1
+Cmd: preprocess
+  insize=3821 outsize=353 ok=1
+Cmd: preprocess
+  insize=3822 outsize=353 ok=1
+Cmd: preprocess
+  insize=3821 outsize=353 ok=1
+Cmd: preprocess
+  insize=3829 outsize=353 ok=1
+Cmd: preprocess
+  insize=3828 outsize=353 ok=1
+Cmd: preprocess
+  insize=3828 outsize=352 ok=1
+Cmd: preprocess
+  insize=3826 outsize=353 ok=1
+Cmd: preprocess
+  insize=3829 outsize=353 ok=1
+Cmd: preprocess
+  insize=3828 outsize=353 ok=1
+Cmd: preprocess
+  insize=1413 outsize=293 ok=1
+Cmd: preprocess
+  insize=2387 outsize=591 ok=1
+Cmd: preprocess
+  insize=2387 outsize=591 ok=1
+Cmd: preprocess
+  insize=2387 outsize=591 ok=1
+Cmd: preprocess
+  insize=3830 outsize=353 ok=1
 Cmd: compileSnippet
-  error: 2 plat 4 at (48): redefinition of 'uv1'\nCompiling Vertex program
-Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=0 insize=2723 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+  error: 2 plat 4 at (89): incorrect number of arguments to numeric-type constructor\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING
+  api=4 type=0 insize=3915 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=0
 Cmd: compileSnippet
-  error: 2 plat 4 at (48): redefinition of 'uv1'\nCompiling Fragment program
-Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=1 insize=2723 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+  error: 2 plat 4 at (89): incorrect number of arguments to numeric-type constructor\nCompiling Fragment program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING
+  api=4 type=1 insize=3915 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=0
+Cmd: preprocess
+  insize=3865 outsize=353 ok=1
+Cmd: preprocess
+  insize=2387 outsize=591 ok=1
+Cmd: preprocess
+  insize=3828 outsize=353 ok=1
+Cmd: preprocess
+  insize=3841 outsize=353 ok=1
+Cmd: preprocess
+  insize=3836 outsize=353 ok=1
+Cmd: preprocess
+  insize=3841 outsize=353 ok=1
+Cmd: preprocess
+  insize=3848 outsize=353 ok=1
+Cmd: preprocess
+  insize=3860 outsize=352 ok=1
+Cmd: preprocess
+  insize=3855 outsize=353 ok=1
+Cmd: preprocess
+  insize=3893 outsize=350 ok=1
+Cmd: preprocess
+  insize=3870 outsize=353 ok=1
+Cmd: preprocess
+  insize=3852 outsize=353 ok=1
 Cmd: compileSnippet
-  error: 2 plat 4 at (112): redefinition of 'uv1'\nCompiling Vertex program
-Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=0 insize=2685 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+  error: 2 plat 4 at (68): undeclared identifier 'dtex2D'\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING
+  api=4 type=0 insize=3937 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=0
 Cmd: compileSnippet
-  error: 2 plat 4 at (112): redefinition of 'uv1'\nCompiling Fragment program
-Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=1 insize=2685 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+  error: 2 plat 4 at (68): undeclared identifier 'dtex2D'\nCompiling Fragment program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING
+  api=4 type=1 insize=3937 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=0
+Cmd: preprocess
+  insize=3851 outsize=353 ok=1
+Cmd: preprocess
+  insize=3851 outsize=353 ok=1
+Cmd: preprocess
+  insize=3851 outsize=353 ok=1
+Cmd: preprocess
+  insize=3836 outsize=353 ok=1
+Cmd: preprocess
+  insize=3836 outsize=353 ok=1
+Cmd: preprocess
+  insize=3837 outsize=353 ok=1
+Cmd: preprocess
+  insize=3836 outsize=353 ok=1
+Cmd: preprocess
+  insize=3823 outsize=353 ok=1
+Cmd: preprocess
+  insize=3836 outsize=353 ok=1
+Cmd: preprocess
+  insize=3836 outsize=353 ok=1
+Cmd: preprocess
+  insize=3855 outsize=353 ok=1
+Cmd: preprocess
+  insize=3861 outsize=353 ok=1
+Cmd: preprocess
+  insize=3861 outsize=353 ok=1
+Cmd: preprocess
+  insize=3885 outsize=351 ok=1
+Cmd: preprocess
+  insize=3879 outsize=352 ok=1
+Cmd: preprocess
+  insize=3851 outsize=353 ok=1
+Cmd: preprocess
+  insize=3879 outsize=352 ok=1
+Cmd: preprocess
+  insize=3880 outsize=352 ok=1
+Cmd: preprocess
+  insize=3879 outsize=353 ok=1
+Cmd: preprocess
+  insize=3855 outsize=352 ok=1
+Cmd: preprocess
+  insize=3842 outsize=352 ok=1
+Cmd: preprocess
+  insize=3843 outsize=353 ok=1
+Cmd: preprocess
+  insize=3844 outsize=353 ok=1
+Cmd: preprocess
+  insize=3849 outsize=353 ok=1
+Cmd: preprocess
+  insize=3849 outsize=353 ok=1
+Cmd: preprocess
+  insize=3848 outsize=352 ok=1
+Cmd: preprocess
+  insize=3849 outsize=353 ok=1
+Cmd: preprocess
+  insize=3857 outsize=353 ok=1
+Cmd: preprocess
+  insize=3864 outsize=353 ok=1
+Cmd: preprocess
+  insize=3863 outsize=353 ok=1
+Cmd: preprocess
+  insize=3863 outsize=353 ok=1
+Cmd: preprocess
+  insize=3863 outsize=353 ok=1
+Cmd: preprocess
+  insize=3862 outsize=353 ok=1
+Cmd: preprocess
+  insize=3848 outsize=353 ok=1
+Cmd: preprocess
+  insize=3849 outsize=352 ok=1
+Cmd: preprocess
+  insize=3843 outsize=352 ok=1
+Cmd: preprocess
+  insize=3857 outsize=353 ok=1
+Cmd: preprocess
+  insize=3856 outsize=353 ok=1
+Cmd: preprocess
+  insize=3851 outsize=353 ok=1
+Cmd: preprocess
+  insize=3843 outsize=352 ok=1
+Cmd: preprocess
+  insize=7642 outsize=3214 ok=1
+Cmd: preprocess
+  insize=19989 outsize=2807 ok=1
+Cmd: preprocess
+  insize=21869 outsize=3168 ok=1
+Cmd: preprocess
+  insize=19838 outsize=2950 ok=1
+Cmd: preprocess
+  insize=1320 outsize=290 ok=1
+Cmd: preprocess
+  insize=4207 outsize=863 ok=1
+Cmd: preprocess
+  insize=7642 outsize=3214 ok=1
+Cmd: preprocess
+  insize=19989 outsize=2807 ok=1
+Cmd: preprocess
+  insize=21869 outsize=3168 ok=1
+Cmd: preprocess
+  insize=19838 outsize=2950 ok=1
+Cmd: preprocess
+  insize=1320 outsize=290 ok=1
+Cmd: preprocess
+  insize=4207 outsize=863 ok=1
+Cmd: preprocess
+  insize=3843 outsize=353 ok=1
+Cmd: preprocess
+  insize=3843 outsize=352 ok=1
+Cmd: preprocess
+  insize=3830 outsize=353 ok=1
+Cmd: preprocess
+  insize=3843 outsize=353 ok=1
+Cmd: preprocess
+  insize=3842 outsize=353 ok=1
+Cmd: preprocess
+  insize=3842 outsize=353 ok=1
+Cmd: preprocess
+  insize=3849 outsize=352 ok=1
+Cmd: preprocess
+  insize=3846 outsize=353 ok=1
+Cmd: preprocess
+  insize=3849 outsize=353 ok=1
+Cmd: preprocess
+  insize=3848 outsize=353 ok=1
+Cmd: preprocess
+  insize=3848 outsize=353 ok=1
+Cmd: preprocess
+  insize=3849 outsize=353 ok=1
+Cmd: preprocess
+  insize=3850 outsize=353 ok=1
+Cmd: preprocess
+  insize=3848 outsize=353 ok=1
+Cmd: preprocess
+  insize=3849 outsize=353 ok=1
+Cmd: preprocess
+  insize=3849 outsize=353 ok=1
+Cmd: preprocess
+  insize=3848 outsize=353 ok=1
+Cmd: preprocess
+  insize=3849 outsize=353 ok=1
+Cmd: preprocess
+  insize=3849 outsize=353 ok=1
+Cmd: preprocess
+  insize=3849 outsize=353 ok=1
+Cmd: preprocess
+  insize=3855 outsize=353 ok=1
+Cmd: preprocess
+  insize=3849 outsize=353 ok=1
+Cmd: preprocess
+  insize=3848 outsize=353 ok=1
+Cmd: preprocess
+  insize=3848 outsize=353 ok=1
+Cmd: preprocess
+  insize=3848 outsize=353 ok=1
+Cmd: preprocess
+  insize=3848 outsize=353 ok=1
+Cmd: preprocess
+  insize=3848 outsize=353 ok=1
+Cmd: preprocess
+  insize=3848 outsize=353 ok=1
+Cmd: preprocess
+  insize=3848 outsize=353 ok=1
+Cmd: preprocess
+  insize=3848 outsize=353 ok=1
+Cmd: preprocess
+  insize=3857 outsize=353 ok=1
+Cmd: preprocess
+  insize=3857 outsize=353 ok=1
+Cmd: preprocess
+  insize=3863 outsize=353 ok=1
+Cmd: preprocess
+  insize=3863 outsize=353 ok=1
+Cmd: preprocess
+  insize=3849 outsize=353 ok=1
+Cmd: preprocess
+  insize=3843 outsize=353 ok=1
+Cmd: preprocess
+  insize=3842 outsize=353 ok=1
+Cmd: preprocess
+  insize=3843 outsize=353 ok=1
+Cmd: preprocess
+  insize=3840 outsize=352 ok=1
+Cmd: preprocess
+  insize=5319 outsize=505 ok=1
+Cmd: preprocess
+  insize=5322 outsize=505 ok=1
+Cmd: preprocess
+  insize=5328 outsize=505 ok=1
+Cmd: preprocess
+  insize=5331 outsize=505 ok=1
+Cmd: preprocess
+  insize=5331 outsize=505 ok=1
+Cmd: preprocess
+  insize=5325 outsize=505 ok=1
+Cmd: preprocess
+  insize=5324 outsize=505 ok=1
+Cmd: preprocess
+  insize=5330 outsize=502 ok=1
+Cmd: preprocess
+  insize=5330 outsize=505 ok=1
+Cmd: preprocess
+  insize=5329 outsize=505 ok=1
+Cmd: preprocess
+  insize=5330 outsize=504 ok=1
+Cmd: preprocess
+  insize=5330 outsize=505 ok=1
+Cmd: preprocess
+  insize=5330 outsize=504 ok=1
+Cmd: preprocess
+  insize=5688 outsize=504 ok=1
+Cmd: preprocess
+  insize=5696 outsize=505 ok=1
+Cmd: preprocess
+  insize=5692 outsize=504 ok=1
+Cmd: preprocess
+  insize=5688 outsize=505 ok=1
+Cmd: preprocess
+  insize=5688 outsize=504 ok=1
+Cmd: preprocess
+  insize=5332 outsize=504 ok=1
+Cmd: preprocess
+  insize=5326 outsize=505 ok=1
+Cmd: preprocess
+  insize=5339 outsize=505 ok=1
+Cmd: preprocess
+  insize=5329 outsize=506 ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=1506 outsize=690 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=1
+  error: 2 plat 4 at (89): undeclared identifier 'source'\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING
+  api=4 type=0 insize=3920 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=0
 Cmd: compileSnippet
-  api=4 type=1 insize=1506 outsize=486 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=1
+  error: 2 plat 4 at (89): undeclared identifier 'source'\nCompiling Fragment program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING
+  api=4 type=1 insize=3920 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=0
 Cmd: preprocess
-  insize=5800 outsize=430 ok=1
+  insize=5324 outsize=506 ok=1
+Cmd: preprocess
+  insize=5324 outsize=505 ok=1
+Cmd: preprocess
+  insize=5325 outsize=506 ok=1
+Cmd: preprocess
+  insize=5325 outsize=505 ok=1
+Cmd: preprocess
+  insize=5331 outsize=506 ok=1
+Cmd: preprocess
+  insize=5331 outsize=505 ok=1
+Cmd: preprocess
+  insize=5355 outsize=505 ok=1
+Cmd: preprocess
+  insize=5355 outsize=506 ok=1
+Cmd: preprocess
+  insize=5355 outsize=506 ok=1
+Cmd: preprocess
+  insize=5360 outsize=506 ok=1
+Cmd: preprocess
+  insize=5491 outsize=506 ok=1
 Cmd: compileSnippet
-  error: 2 plat 4 at (48): redefinition of 'uv1'\nCompiling Vertex program
-Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=0 insize=2723 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+  error: 2 plat 4 at (93): incorrect number of arguments to numeric-type constructor\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING
+  api=4 type=0 insize=4082 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=0
 Cmd: compileSnippet
-  error: 2 plat 4 at (48): redefinition of 'uv1'\nCompiling Fragment program
-Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING
-  api=4 type=1 insize=2723 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_DLDR_ENCODING ok=0
+  error: 2 plat 4 at (93): incorrect number of arguments to numeric-type constructor\nCompiling Fragment program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING
+  api=4 type=1 insize=4082 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=0
 Cmd: preprocess
-  insize=5581 outsize=430 ok=1
+  insize=5490 outsize=506 ok=1
 Cmd: preprocess
-  insize=5585 outsize=430 ok=1
+  insize=5500 outsize=506 ok=1
 Cmd: preprocess
-  insize=5578 outsize=430 ok=1
+  insize=5500 outsize=506 ok=1
 Cmd: preprocess
-  insize=5570 outsize=430 ok=1
+  insize=5508 outsize=506 ok=1
 Cmd: preprocess
-  insize=5577 outsize=430 ok=1
+  insize=5509 outsize=506 ok=1
 Cmd: preprocess
-  insize=5563 outsize=430 ok=1
+  insize=5509 outsize=506 ok=1
 Cmd: preprocess
-  insize=5603 outsize=431 ok=1
+  insize=5509 outsize=506 ok=1
 Cmd: preprocess
-  insize=5603 outsize=431 ok=1
+  insize=5509 outsize=506 ok=1
 Cmd: preprocess
-  insize=5603 outsize=431 ok=1
+  insize=5509 outsize=506 ok=1
 Cmd: preprocess
-  insize=5606 outsize=431 ok=1
+  insize=5509 outsize=506 ok=1
 Cmd: preprocess
-  insize=5563 outsize=430 ok=1
+  insize=5513 outsize=506 ok=1
 Cmd: preprocess
-  insize=5567 outsize=430 ok=1
+  insize=5511 outsize=506 ok=1
 Cmd: preprocess
-  insize=5574 outsize=430 ok=1
+  insize=5511 outsize=506 ok=1
 Cmd: preprocess
-  insize=5567 outsize=430 ok=1
+  insize=5503 outsize=506 ok=1
 Cmd: preprocess
-  insize=5563 outsize=430 ok=1
+  insize=5508 outsize=506 ok=1
 Cmd: preprocess
-  insize=5559 outsize=430 ok=1
+  insize=5507 outsize=506 ok=1
 Cmd: preprocess
-  insize=5563 outsize=430 ok=1
+  insize=5501 outsize=506 ok=1
 Cmd: preprocess
-  insize=5559 outsize=430 ok=1
+  insize=5507 outsize=506 ok=1
 Cmd: preprocess
-  insize=5566 outsize=430 ok=1
+  insize=5498 outsize=506 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (89): 'random': no matching 0 parameter function\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING
+  error: 2 plat 4 at (89): syntax error: unexpected token ';'\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING
+  api=4 type=0 insize=4089 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=0
+Cmd: compileSnippet
+  error: 2 plat 4 at (89): 'random': no matching 0 parameter function\nCompiling Fragment program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING
+  error: 2 plat 4 at (89): syntax error: unexpected token ';'\nCompiling Fragment program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING
+  api=4 type=1 insize=4089 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=0
 Cmd: preprocess
-  insize=5559 outsize=430 ok=1
+  insize=5499 outsize=505 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (89): 'abs': no matching 0 parameter intrinsic function; Possible intrinsic functions are: abs(float|half|double|min10float|min16float|int|uint|min12int|min16int|min16uint)\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING
+  error: 2 plat 4 at (89): syntax error: unexpected token ';'\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING
+  api=4 type=0 insize=4090 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=0
+Cmd: compileSnippet
+  error: 2 plat 4 at (89): 'abs': no matching 0 parameter intrinsic function; Possible intrinsic functions are: abs(float|half|double|min10float|min16float|int|uint|min12int|min16int|min16uint)\nCompiling Fragment program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING
+  error: 2 plat 4 at (89): syntax error: unexpected token ';'\nCompiling Fragment program
+Platform defines: UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING
+  api=4 type=1 insize=4090 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_HARDWARE_TIER3 UNITY_LIGHTMAP_RGBM_ENCODING ok=0
 Cmd: preprocess
-  insize=5558 outsize=431 ok=1
+  insize=5498 outsize=505 ok=1
+Cmd: preprocess
+  insize=5500 outsize=506 ok=1
+Cmd: preprocess
+  insize=5499 outsize=506 ok=1
+Cmd: preprocess
+  insize=5498 outsize=505 ok=1
+Cmd: preprocess
+  insize=5513 outsize=506 ok=1
+Cmd: preprocess
+  insize=5512 outsize=506 ok=1
+Cmd: preprocess
+  insize=5513 outsize=506 ok=1
+Cmd: preprocess
+  insize=5516 outsize=506 ok=1
+Cmd: preprocess
+  insize=5522 outsize=506 ok=1
+Cmd: preprocess
+  insize=5523 outsize=506 ok=1
+Cmd: preprocess
+  insize=5523 outsize=506 ok=1
+Cmd: preprocess
+  insize=5522 outsize=506 ok=1
+Cmd: preprocess
+  insize=5522 outsize=506 ok=1
+Cmd: preprocess
+  insize=5529 outsize=506 ok=1
+Cmd: preprocess
+  insize=5522 outsize=506 ok=1
+Cmd: preprocess
+  insize=5530 outsize=506 ok=1
+Cmd: preprocess
+  insize=5531 outsize=506 ok=1
+Cmd: preprocess
+  insize=5531 outsize=506 ok=1
+Cmd: preprocess
+  insize=5524 outsize=506 ok=1
+Cmd: preprocess
+  insize=5529 outsize=506 ok=1
+Cmd: preprocess
+  insize=5530 outsize=506 ok=1
+Cmd: preprocess
+  insize=5531 outsize=506 ok=1
 Cmd: shutdown
 
 Quitting shader compiler process
